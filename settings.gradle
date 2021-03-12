@@ -1,3 +1,4 @@
 rootProject.name = "Clayground"
 include ':app'
 include ':base-mvi'
+include ':shared'

@@ -60,15 +60,18 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appcompat
+    implementation Google.material
     implementation Compose.activity
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.material:material-icons-extended:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation Compose.ui
+    implementation Compose.material
+    implementation Compose.materialIcons
+    implementation Compose.uiTooling
+    implementation AndroidX.lifecycleRuntimeKtx
+
+    implementation project(':shared')
+    implementation project(':base-mvi')
 
     implementation DI.hilt
     implementation DI.lifecycle
@@ -76,8 +79,8 @@ dependencies {
     kapt DI.kaptLifecycle
     implementation Other.timber
 
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation Testing.junit
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    androidTestImplementation Testing.androidXTestExt
+    androidTestImplementation Compose.composeUiTest
 }

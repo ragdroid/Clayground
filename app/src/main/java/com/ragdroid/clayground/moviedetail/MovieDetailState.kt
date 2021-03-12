@@ -1,19 +1,42 @@
 package com.ragdroid.clayground.moviedetail
 
+import com.ragdroid.base_mvi.Next
 import com.ragdroid.clayground.model.MovieId
+import com.ragdroid.clayground.shared.api.MoviesService
+import com.ragdroid.clayground.shared.api.models.MovieDetailResponse
+import com.ragdroid.clayground.shared.domain.mappers.toMovieDetail
+import com.ragdroid.clayground.shared.domain.models.MovieDetail
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.onStart
+import java.util.concurrent.TimeUnit
 
 data class MovieDetailState(
-    val loadingState: LoadingState = LoadingState.Idle
-) {
-    fun update(event: MovieDetailEvent,
-               sideEffectsFlow: MutableSharedFlow<MovideDetailSideEffect>,
-               uiEffectsFlow: MutableSharedFlow<MovieDetailState>)  =
+    val loadingState: LoadingState = LoadingState.Idle,
+    val movieDetails: MovieDetail? = null
+)
+
+class MovieDetailUpdate() {
+    fun update(state: MovieDetailState, event: MovieDetailEvent):Next<MovieDetailState, MovieDetailSideEffect>  =
         when(event) {
-            else -> this
+            is MovieDetailEvent.Load -> {
+                Next.next(
+                    state.copy(loadingState = LoadingState.Loading),
+                    MovieDetailSideEffect.LoadMovieDetails(MovieId(464052))
+                )
+            }
+            is MovieDetailEvent.LoadSuccess -> Next.next(state.copy(
+                loadingState = LoadingState.Idle,
+                movieDetails = event.movieDetails
+            ))
+            is MovieDetailEvent.LoadFailed -> Next.next(
+                state.copy(loadingState = LoadingState.Idle)
+            )
+            else -> Next.noChange()
         }
 }
 
@@ -26,21 +49,34 @@ sealed class MovieDetailEvent {
     object Load: MovieDetailEvent()
 
     //Result events
-    object LoadSuccess: MovieDetailEvent()
-    object LoadFailed: MovieDetailEvent()
+    data class LoadSuccess(val movieDetails: MovieDetail): MovieDetailEvent()
+    data class LoadFailed(val throwable: Throwable): MovieDetailEvent()
 }
 
-sealed class MovideDetailSideEffect {
-    data class LoadMovieDetails(val id: MovieId): MovideDetailSideEffect()
+sealed class MovieDetailSideEffect {
+    data class LoadMovieDetails(val id: MovieId): MovieDetailSideEffect()
 
 }
 
-fun MovideDetailSideEffect.process(_uiEffectsFlow: MutableSharedFlow<MovieDetailState>): Flow<MovieDetailEvent> =
-    when(this) {
-        is MovideDetailSideEffect.LoadMovieDetails -> flow<MovieDetailEvent> {
-            emit(MovieDetailEvent.LoadSuccess)
+class MovieDetailSideEffectHandler(
+    private val moviesService: MoviesService
+) {
+    fun process(sideEffect: MovieDetailSideEffect, _uiEffectsFlow: MutableSharedFlow<MovieDetailViewEffect>): Flow<MovieDetailEvent> =
+        when (sideEffect) {
+            is MovieDetailSideEffect.LoadMovieDetails -> flow<MovieDetailEvent> {
+                val movieDetail = moviesService.movieDetail(sideEffect.id.id).toMovieDetail()
+                emit(MovieDetailEvent.LoadSuccess(movieDetail))
+            }
+                .onStart { delay(3000) }
+                .catch {
+                _uiEffectsFlow.emit(MovieDetailViewEffect.ShowError(it))
+                emit(MovieDetailEvent.LoadFailed(it))
+            }
         }
-        else -> flowOf()
-    }
+}
+
+sealed class MovieDetailViewEffect {
+    data class ShowError(val throwable: Throwable): MovieDetailViewEffect()
+}
 
 
