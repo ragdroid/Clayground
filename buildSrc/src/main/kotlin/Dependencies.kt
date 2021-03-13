@@ -70,6 +70,13 @@ object Compose {
     const val composeUiTest = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
 }
 
+object Coroutines {
+    object Versions {
+        const val core = "1.4.3"
+    }
+    const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.core}"
+}
+
 object Other {
     object Versions {
         const val timber = "4.1.2"

@@ -1,20 +1,15 @@
-package com.ragdroid.clayground.moviedetail
+package com.ragdroid.clayground.shared.ui.moviedetail
 
-import com.ragdroid.base_mvi.Next
-import com.ragdroid.clayground.model.MovieId
-import com.ragdroid.clayground.shared.api.MoviesService
-import com.ragdroid.clayground.shared.api.models.MovieDetailResponse
-import com.ragdroid.clayground.shared.domain.mappers.toMovieDetail
 import com.ragdroid.clayground.shared.domain.models.MovieDetail
+import com.ragdroid.clayground.shared.domain.models.MovieId
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
+import com.ragdroid.clayground.shared.ui.base.Next
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.onStart
-import java.util.concurrent.TimeUnit
 
 data class MovieDetailState(
     val loadingState: LoadingState = LoadingState.Idle,
@@ -22,7 +17,7 @@ data class MovieDetailState(
 )
 
 class MovieDetailUpdate() {
-    fun update(state: MovieDetailState, event: MovieDetailEvent):Next<MovieDetailState, MovieDetailSideEffect>  =
+    fun update(state: MovieDetailState, event: MovieDetailEvent): Next<MovieDetailState, MovieDetailSideEffect> =
         when(event) {
             is MovieDetailEvent.Load -> {
                 Next.next(

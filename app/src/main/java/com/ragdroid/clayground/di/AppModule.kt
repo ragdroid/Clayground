@@ -1,8 +1,7 @@
 package com.ragdroid.clayground.di
 
-import com.ragdroid.clayground.shared.api.MoviesService
 import com.ragdroid.clayground.shared.di.SharedModule
-import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
+import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object AppModule {
     @Provides
-    fun provideMovieDetailRepository(): MovieDetailRepository = SharedModule.moviesService
+    fun provideMovieDetailRepository(): MovieDetailViewModel = SharedModule.movieDetailViewModel
 }

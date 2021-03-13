@@ -4,6 +4,7 @@ import com.ragdroid.clayground.shared.api.ApiToken
 import com.ragdroid.clayground.shared.api.BaseUrl
 import com.ragdroid.clayground.shared.api.MoviesService
 import com.ragdroid.clayground.shared.api.MoviesServiceImpl
+import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import com.ragdroid.clayground.shared.BuildKonfig
@@ -42,6 +43,7 @@ object SharedModule {
         factory { ApiToken(BuildKonfig.TMDB_API_TOKEN) }
         factory { MovieDetailRepository(get()) }
         factory { MoviesServiceImpl(get(), get(), get()) as MoviesService }
+        factory { MovieDetailViewModel(get()) }
     }
     fun configure() {
         startKoin {
@@ -49,8 +51,8 @@ object SharedModule {
         }
     }
 
-    val moviesService: MovieDetailRepository by lazy(LazyThreadSafetyMode.NONE) {
-        CommonModule.get().get<MovieDetailRepository>()
+    val movieDetailViewModel: MovieDetailViewModel by lazy(LazyThreadSafetyMode.NONE) {
+        CommonModule.get().get<MovieDetailViewModel>()
     }
 }
 

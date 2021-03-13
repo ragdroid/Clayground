@@ -1,11 +1,8 @@
-package com.ragdroid.clayground.moviedetail
+package com.ragdroid.clayground.shared.ui.moviedetail
 
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.ragdroid.clayground.shared.api.MoviesService
+import com.ragdroid.clayground.shared.ui.base.MviViewModel
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -18,16 +15,12 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.scan
-import kotlinx.coroutines.launch
-import timber.log.Timber
-import javax.inject.Inject
 
 @FlowPreview
 @ExperimentalCoroutinesApi
-@HiltViewModel
-class MovieDetailViewModel @Inject constructor(
+class MovieDetailViewModel(
     private val movieDetailRepository: MovieDetailRepository
-): ViewModel() {
+): MviViewModel<MovieDetailState, MovieDetailViewEffect> {
 
     private val eventsFlow = MutableSharedFlow<MovieDetailEvent>(
         replay = 0
@@ -36,23 +29,23 @@ class MovieDetailViewModel @Inject constructor(
         replay = 0
     )
     private val _uiEffectsFlow = MutableSharedFlow<MovieDetailViewEffect>()
-    val uiEffectsFlow: SharedFlow<MovieDetailViewEffect>
+    override val uiEffectsFlow: SharedFlow<MovieDetailViewEffect>
         get() = _uiEffectsFlow
 
     private val _stateFlow = MutableStateFlow<MovieDetailState>(MovieDetailState())
-    val stateFlow: StateFlow<MovieDetailState>
+    override val stateFlow: StateFlow<MovieDetailState>
         get() = _stateFlow
 
-    init {
+    fun initializeIn(viewModelScope: CoroutineScope) {
         val resultsFlow = sideEffectsFlow
             .flatMapMerge {
-                Timber.d("Side Effect: $it")
+//                Timber.d("Side Effect: $it")
                 val movieDetailSideEffectHandler = MovieDetailSideEffectHandler(movieDetailRepository)
                 movieDetailSideEffectHandler.process(it, _uiEffectsFlow)
             }
         merge(eventsFlow, resultsFlow)
             .onEach {
-                Timber.d("Event: $it")
+//                Timber.d("Event: $it")
             }
             .scan(MovieDetailState()) { state, event ->
                 val next = MovieDetailUpdate().update(state, event)
@@ -64,15 +57,12 @@ class MovieDetailViewModel @Inject constructor(
             .distinctUntilChanged { old, new -> old == new }
             .onEach {
                 _stateFlow.value = it
-                Timber.d("State $it")
-            }
-            .launchIn(viewModelScope)
+//                Timber.d("State $it")
+            }.launchIn(viewModelScope)
     }
 
-    fun dispatchEvent(event: MovieDetailEvent) {
-        viewModelScope.launch {
-            eventsFlow.emit(event)
-        }
+    suspend fun dispatchEvent(event: MovieDetailEvent) {
+        eventsFlow.emit(event)
     }
 
 }

@@ -1,5 +1,8 @@
-package com.ragdroid.base_mvi
+package com.ragdroid.clayground.shared.ui.base
 
+/**
+ * inspired by mobius
+ */
 data class Next<S,F>(val next: S? = null, val effects: List<F> = emptyList()) {
     fun hasModel() = next != null
     fun safeModel() = next!!
