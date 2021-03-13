@@ -6,6 +6,7 @@ import com.ragdroid.clayground.shared.api.MoviesService
 import com.ragdroid.clayground.shared.api.models.MovieDetailResponse
 import com.ragdroid.clayground.shared.domain.mappers.toMovieDetail
 import com.ragdroid.clayground.shared.domain.models.MovieDetail
+import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -59,12 +60,12 @@ sealed class MovieDetailSideEffect {
 }
 
 class MovieDetailSideEffectHandler(
-    private val moviesService: MoviesService
+    private val movieDetailRepository: MovieDetailRepository
 ) {
     fun process(sideEffect: MovieDetailSideEffect, _uiEffectsFlow: MutableSharedFlow<MovieDetailViewEffect>): Flow<MovieDetailEvent> =
         when (sideEffect) {
             is MovieDetailSideEffect.LoadMovieDetails -> flow<MovieDetailEvent> {
-                val movieDetail = moviesService.movieDetail(sideEffect.id.id).toMovieDetail()
+                val movieDetail = movieDetailRepository.movieDetails(sideEffect.id.id)
                 emit(MovieDetailEvent.LoadSuccess(movieDetail))
             }
                 .onStart { delay(3000) }

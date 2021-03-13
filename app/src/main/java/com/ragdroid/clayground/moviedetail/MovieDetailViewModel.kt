@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ragdroid.clayground.shared.api.MoviesService
+import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -25,7 +26,7 @@ import javax.inject.Inject
 @ExperimentalCoroutinesApi
 @HiltViewModel
 class MovieDetailViewModel @Inject constructor(
-    private val moviesService: MoviesService
+    private val movieDetailRepository: MovieDetailRepository
 ): ViewModel() {
 
     private val eventsFlow = MutableSharedFlow<MovieDetailEvent>(
@@ -46,7 +47,7 @@ class MovieDetailViewModel @Inject constructor(
         val resultsFlow = sideEffectsFlow
             .flatMapMerge {
                 Timber.d("Side Effect: $it")
-                val movieDetailSideEffectHandler = MovieDetailSideEffectHandler(moviesService)
+                val movieDetailSideEffectHandler = MovieDetailSideEffectHandler(movieDetailRepository)
                 movieDetailSideEffectHandler.process(it, _uiEffectsFlow)
             }
         merge(eventsFlow, resultsFlow)
