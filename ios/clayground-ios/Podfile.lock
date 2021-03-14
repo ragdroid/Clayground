@@ -1,0 +1,16 @@
+PODS:
+  - Clayground (0.0.1)
+
+DEPENDENCIES:
+  - Clayground (from `../../shared/`)
+
+EXTERNAL SOURCES:
+  Clayground:
+    :path: "../../shared/"
+
+SPEC CHECKSUMS:
+  Clayground: c2ef06000aaf8688c32a466edc35850aeb2d745c
+
+PODFILE CHECKSUM: 320f89ed39d59ee842e4da0d0436c8553df96771
+
+COCOAPODS: 1.9.3
