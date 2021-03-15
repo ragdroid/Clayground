@@ -1,0 +1,64 @@
+# MacOS files
+.DS_Store
+
+# Xcode User settings
+xcuserdata/
+
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+# *.xcworkspace
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Leave playgrounds checked-in with the project by default, uncomment to remove
+# timeline.xctimeline
+# playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# *.xcodeproj
+#
+# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
+# hence it is not needed unless you have added a package configuration file to your project
+# .swiftpm
+
+.build/
+
+# CocoaPods
+#
+# While some recommend against adding the Pods directory to your .gitignore, Fueled has opted to do so
+# for some of the reasons mentioned here. The Podfile.lock should be included to ensure compatibility:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+
+Pods/
+
+# Carthage
+#
+# In the event that the project chooses to use Carthage, the build folder should be ignored
+
+Carthage/Build
+
+# Swiftlint configuration is required for proper Swiftlint operation
+# .swiftlint.yml
+
+# Bitrise
+#
+# Included for debugging purposes
+
+.bitrise-steps
+codesigndoc_exports/
+
+build/
+github.properties
