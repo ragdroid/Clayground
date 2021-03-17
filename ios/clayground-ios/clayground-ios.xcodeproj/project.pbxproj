@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -122,6 +122,7 @@
 		3D0A1B6E25FE32BD00B4A2FE /* clayground-ios */ = {
 			isa = PBXGroup;
 			children = (
+				9F31DF032601490500212F4C /* Code */,
 				3D0A1B6F25FE32BD00B4A2FE /* clayground_iosApp.swift */,
 				3D0A1B7125FE32BD00B4A2FE /* ContentView.swift */,
 				3D0A1B7325FE32BE00B4A2FE /* Assets.xcassets */,
@@ -167,8 +168,14 @@
 				92C9BFF557F443E28D54DE35 /* Pods-clayground-iosTests.debug.xcconfig */,
 				B9BC718C070A0B253219463D /* Pods-clayground-iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9F31DF032601490500212F4C /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

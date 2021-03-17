@@ -6,12 +6,33 @@
 //
 
 import SwiftUI
+import Swinject
+import shared
 
 @main
 struct clayground_iosApp: App {
+    
+    static var appComponent: Resolver!
+    init() {
+        SharedModule().configure()
+        clayground_iosApp.appComponent = Assembler([AppModule()]).resolver
+    }
+
     var body: some Scene {
+ 
         WindowGroup {
             ContentView()
         }
     }
+    
+}
+
+class AppModule: Assembly {
+    
+    func assemble(container: Container) {
+        container.register(MovieDetailViewModel.self) { _ in
+            SharedModule.Companion().movieDetailViewModel
+        }
+    }
+
 }

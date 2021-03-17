@@ -1,5 +1,6 @@
 package com.ragdroid.clayground.shared.ui.moviedetail
 
+import co.touchlab.stately.ensureNeverFrozen
 import com.ragdroid.clayground.shared.ui.base.MviViewModel
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
 import kotlinx.coroutines.CoroutineScope
@@ -22,6 +23,9 @@ class MovieDetailViewModel(
     private val movieDetailRepository: MovieDetailRepository
 ): MviViewModel<MovieDetailState, MovieDetailViewEffect> {
 
+    init {
+        ensureNeverFrozen()
+    }
     private val eventsFlow = MutableSharedFlow<MovieDetailEvent>(
         replay = 0
     )

@@ -40,7 +40,12 @@ kotlin {
                 implementation(Ktor.logging)
                 implementation(Ktor.serialization)
                 implementation(Serialization.kotlinx)
-                implementation(Coroutines.core)
+                implementation(Coroutines.core){
+                    version {
+                        strictly(Coroutines.Versions.core)
+                    }
+                }
+                implementation(Stately.common)
             }
         }
         val commonTest by getting {

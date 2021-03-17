@@ -19,9 +19,9 @@ import org.koin.core.component.get
 import org.koin.core.component.inject
 import kotlin.native.concurrent.ThreadLocal
 
-object SharedModule {
+class SharedModule {
     val apiModule = module {
-        single {
+        factory {
             val apiToken: ApiToken = get()
             HttpClient {
                 install(JsonFeature) {
@@ -33,7 +33,7 @@ object SharedModule {
                 }
             }
         }
-        single {
+        factory {
             Json {
                 ignoreUnknownKeys = true
             }
@@ -51,8 +51,10 @@ object SharedModule {
         }
     }
 
-    val movieDetailViewModel: MovieDetailViewModel by lazy(LazyThreadSafetyMode.NONE) {
-        CommonModule.get().get<MovieDetailViewModel>()
+    companion object {
+        val movieDetailViewModel: MovieDetailViewModel by lazy(LazyThreadSafetyMode.NONE) {
+            CommonModule.get().get<MovieDetailViewModel>()
+        }
     }
 }
 

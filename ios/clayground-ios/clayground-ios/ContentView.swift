@@ -1,4 +1,4 @@
-//
+	//
 //  ContentView.swift
 //  clayground-ios
 //
@@ -9,9 +9,27 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
+    
+    var viewModel: MovieDetailsNativeViewModel!
     var body: some View {
 		Text(Greeting().greeting())
             .padding()
+    }
+    init() {
+        class Collector: NativeCallback {
+            func handleViewEffects(viewEffect: Any?) {
+                
+            }
+            
+            func render(state: Any?) {
+                
+            }
+            
+            
+        }
+        viewModel = MovieDetailsNativeViewModel(viewModel: (clayground_iosApp.appComponent?.resolve(MovieDetailViewModel.self)!)!,
+                                                nativeCallback: Collector())
+        
     }
 }
 
@@ -20,3 +38,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
