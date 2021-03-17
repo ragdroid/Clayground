@@ -21,11 +21,14 @@ import kotlin.native.concurrent.ThreadLocal
 
 class SharedModule {
     val apiModule = module {
-        factory {
+        single {
             val apiToken: ApiToken = get()
+            val json = Json {
+                ignoreUnknownKeys = true
+            }
             HttpClient {
                 install(JsonFeature) {
-                    serializer = KotlinxSerializer(get())
+                    serializer = KotlinxSerializer(json)
                 }
                 install(Logging) {
                     logger = Logger.DEFAULT
@@ -33,12 +36,6 @@ class SharedModule {
                 }
             }
         }
-        factory {
-            Json {
-                ignoreUnknownKeys = true
-            }
-        }
-        single { MoviesServiceImpl(get(), get(), get()) }
         factory { BaseUrl("https://api.themoviedb.org/3") }
         factory { ApiToken(BuildKonfig.TMDB_API_TOKEN) }
         factory { MovieDetailRepository(get()) }
@@ -52,9 +49,8 @@ class SharedModule {
     }
 
     companion object {
-        val movieDetailViewModel: MovieDetailViewModel by lazy(LazyThreadSafetyMode.NONE) {
-            CommonModule.get().get<MovieDetailViewModel>()
-        }
+        val movieDetailViewModel: MovieDetailViewModel
+        get() = CommonModule.get().get<MovieDetailViewModel>()
     }
 }
 
