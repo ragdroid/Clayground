@@ -46,6 +46,7 @@ kotlin {
                     }
                 }
                 implementation(Stately.common)
+                api(Other.kermit)
             }
         }
         val commonTest by getting {

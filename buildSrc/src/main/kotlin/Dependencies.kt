@@ -86,9 +86,11 @@ object Stately {
 object Other {
     object Versions {
         const val timber = "4.1.2"
+        const val kermit = "0.1.8"
     }
     const val buildkonfig = "0.7.0"
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+    const val kermit = "co.touchlab:kermit:${Versions.kermit}"
 }
 
 object Testing {

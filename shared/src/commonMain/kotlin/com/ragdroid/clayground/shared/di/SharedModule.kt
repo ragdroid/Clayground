@@ -1,5 +1,6 @@
 package com.ragdroid.clayground.shared.di
 
+import co.touchlab.kermit.Kermit
 import com.ragdroid.clayground.shared.api.ApiToken
 import com.ragdroid.clayground.shared.api.BaseUrl
 import com.ragdroid.clayground.shared.api.MoviesService
@@ -9,6 +10,7 @@ import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import com.ragdroid.clayground.shared.BuildKonfig
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
+import com.ragdroid.clayground.shared.kermitLogger
 import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
@@ -41,7 +43,8 @@ class SharedModule {
         single { ApiToken(BuildKonfig.TMDB_API_TOKEN) }
         single { MovieDetailRepository(get()) }
         single { MoviesServiceImpl(get(), get(), get()) as MoviesService }
-        single { MovieDetailViewModel(get()) }
+        single { Kermit(kermitLogger()) }
+        single { MovieDetailViewModel(get(), get()) }
     }
     fun configure() {
         startKoin {

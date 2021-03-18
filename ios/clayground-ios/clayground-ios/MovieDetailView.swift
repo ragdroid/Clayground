@@ -9,18 +9,11 @@ import SwiftUI
 import shared
 
 struct MovieDetailView: View {
-    
-    var movieDetailState: MovieDetailState
-    
+        
     var viewModel = NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>(viewModel: (clayground_iosApp.appComponent?.resolve(MovieDetailViewModel.self)!)!,
                                             nativeCallback: Collector())
     
     var body: some View {
-            if (movieDetailState.loadingState is LoadingState.Idle) {
-                Text("Loading")
-            } else {
-                Text(movieDetailState.movieDetails!.title)
-            }
 		Text(Greeting().greeting())
             .padding()
             .onAppear {
@@ -36,7 +29,7 @@ struct MovieDetailView: View {
             }
             
             func render(state: MovieDetailState) {
-                movieDetailState = state
+                print(state)
             }
             
         }

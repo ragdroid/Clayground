@@ -1,7 +1,7 @@
 package com.ragdroid.clayground.shared.ui.moviedetail
 
+import co.touchlab.kermit.Kermit
 import co.touchlab.stately.ensureNeverFrozen
-import com.ragdroid.clayground.shared.ui.base.MviViewModel
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
 import com.ragdroid.clayground.shared.ui.base.GenericNativeViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +21,8 @@ import kotlinx.coroutines.flow.scan
 @FlowPreview
 @ExperimentalCoroutinesApi
 class MovieDetailViewModel(
-    private val movieDetailRepository: MovieDetailRepository
+    private val movieDetailRepository: MovieDetailRepository,
+    private val kermit: Kermit
 ): GenericNativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>() {
 
     init {
@@ -44,13 +45,13 @@ class MovieDetailViewModel(
     override fun initializeIn(viewModelScope: CoroutineScope) {
         val resultsFlow = sideEffectsFlow
             .flatMapMerge {
-//                Timber.d("Side Effect: $it")
+                kermit.d { "Side Effect: $it" }
                 val movieDetailSideEffectHandler = MovieDetailSideEffectHandler(movieDetailRepository)
                 movieDetailSideEffectHandler.process(it, _uiEffectsFlow)
             }
         merge(eventsFlow, resultsFlow)
             .onEach {
-//                Timber.d("Event: $it")
+                kermit.d { "Event: $it" }
             }
             .scan(MovieDetailState()) { state, event ->
                 val next = MovieDetailUpdate().update(state, event)
@@ -62,7 +63,7 @@ class MovieDetailViewModel(
             .distinctUntilChanged { old, new -> old == new }
             .onEach {
                 _stateFlow.value = it
-//                Timber.d("State $it")
+                kermit.d { "State $it" }
             }.launchIn(viewModelScope)
     }
 
