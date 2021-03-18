@@ -18,12 +18,12 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieDetailAndroidViewModel @Inject constructor(
     private val movieDetailViewModel: MovieDetailViewModel
-):ViewModel(), MviViewModel<MovieDetailState, MovieDetailViewEffect> by movieDetailViewModel {
+):ViewModel(), MviViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect> by movieDetailViewModel {
 
     init {
         movieDetailViewModel.initializeIn(viewModelScope)
     }
-    fun dispatchEvent(event: MovieDetailEvent) {
+    fun dispatch(event: MovieDetailEvent) {
         viewModelScope.launch {
             movieDetailViewModel.dispatchEvent(event)
         }

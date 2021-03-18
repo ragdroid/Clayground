@@ -32,7 +32,7 @@ class MovieDetailActivity: AppCompatActivity() {
     private val viewModel: MovieDetailAndroidViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.dispatchEvent(MovieDetailEvent.Load)
+        viewModel.dispatch(MovieDetailEvent.Load)
         setContent {
             val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {

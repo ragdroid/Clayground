@@ -21,7 +21,7 @@ struct clayground_iosApp: App {
     var body: some Scene {
  
         WindowGroup {
-            ContentView()
+            MovieDetailView()
         }
     }
     

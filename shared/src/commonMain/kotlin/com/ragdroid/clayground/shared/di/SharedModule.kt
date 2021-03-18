@@ -23,6 +23,7 @@ class SharedModule {
     val apiModule = module {
         single {
             val apiToken: ApiToken = get()
+            //providing json as a dependency separately causes kotlin native to freeze, not sure why yet
             val json = Json {
                 ignoreUnknownKeys = true
             }
@@ -36,11 +37,11 @@ class SharedModule {
                 }
             }
         }
-        factory { BaseUrl("https://api.themoviedb.org/3") }
-        factory { ApiToken(BuildKonfig.TMDB_API_TOKEN) }
-        factory { MovieDetailRepository(get()) }
-        factory { MoviesServiceImpl(get(), get(), get()) as MoviesService }
-        factory { MovieDetailViewModel(get()) }
+        single { BaseUrl("https://api.themoviedb.org/3") }
+        single { ApiToken(BuildKonfig.TMDB_API_TOKEN) }
+        single { MovieDetailRepository(get()) }
+        single { MoviesServiceImpl(get(), get(), get()) as MoviesService }
+        single { MovieDetailViewModel(get()) }
     }
     fun configure() {
         startKoin {

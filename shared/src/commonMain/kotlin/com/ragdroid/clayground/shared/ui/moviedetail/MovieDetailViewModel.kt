@@ -3,6 +3,7 @@ package com.ragdroid.clayground.shared.ui.moviedetail
 import co.touchlab.stately.ensureNeverFrozen
 import com.ragdroid.clayground.shared.ui.base.MviViewModel
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
+import com.ragdroid.clayground.shared.ui.base.GenericNativeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -21,7 +22,7 @@ import kotlinx.coroutines.flow.scan
 @ExperimentalCoroutinesApi
 class MovieDetailViewModel(
     private val movieDetailRepository: MovieDetailRepository
-): MviViewModel<MovieDetailState, MovieDetailViewEffect> {
+): GenericNativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>() {
 
     init {
         ensureNeverFrozen()
@@ -40,7 +41,7 @@ class MovieDetailViewModel(
     override val stateFlow: StateFlow<MovieDetailState>
         get() = _stateFlow
 
-    fun initializeIn(viewModelScope: CoroutineScope) {
+    override fun initializeIn(viewModelScope: CoroutineScope) {
         val resultsFlow = sideEffectsFlow
             .flatMapMerge {
 //                Timber.d("Side Effect: $it")
@@ -65,7 +66,7 @@ class MovieDetailViewModel(
             }.launchIn(viewModelScope)
     }
 
-    suspend fun dispatchEvent(event: MovieDetailEvent) {
+    override suspend fun dispatchEvent(event: MovieDetailEvent) {
         eventsFlow.emit(event)
     }
 

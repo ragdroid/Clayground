@@ -1,6 +1,7 @@
 package com.ragdroid.clayground.shared
 
 import co.touchlab.stately.ensureNeverFrozen
+import com.ragdroid.clayground.shared.ui.base.GenericNativeViewModel
 import com.ragdroid.clayground.shared.ui.base.MviViewModel
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailEvent
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailState
@@ -15,22 +16,22 @@ import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
 @FlowPreview
-class MovieDetailsNativeViewModel(
-    val viewModel: MovieDetailViewModel,
-    val nativeCallback: NativeCallback<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>
+class NativeViewModel<State, Event, ViewEffect>(
+    private val viewModel: GenericNativeViewModel<State, Event, ViewEffect>,
+    private val nativeCallback: NativeCallback<State, Event, ViewEffect>
 ) {
-    val mainScope = MainScope(Dispatchers.Main)
+    private val mainScope = MainScope(Dispatchers.Main)
     init {
         ensureNeverFrozen()
         initLoop()
     }
-    fun dispatchEvent(event: MovieDetailEvent) {
+    fun dispatchEvent(event: Event) {
         mainScope.launch {
             viewModel.dispatchEvent(event)
         }
     }
 
-    fun initLoop() {
+    private fun initLoop() {
         viewModel.initializeIn(mainScope)
         mainScope.launch {
             viewModel.stateFlow.collect {
@@ -47,7 +48,7 @@ class MovieDetailsNativeViewModel(
     }
 }
 
-interface NativeCallback<S, E, VF> {
-    fun render(state: S)
-    fun handleViewEffects(viewEffect: VF)
+abstract class NativeCallback<S, E, VF> {
+    fun render(state: S) {}
+    fun handleViewEffects(viewEffect: VF) {}
 }
