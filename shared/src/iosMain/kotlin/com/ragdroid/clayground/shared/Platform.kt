@@ -9,4 +9,4 @@ actual class Platform actual constructor() {
         UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
 }
 
-actual fun kermitLogger(): Logger = NSLogLogger()
+actual fun logger(): Logger = NSLogLogger()

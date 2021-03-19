@@ -1,5 +1,6 @@
 package com.ragdroid.clayground.shared
 
+import co.touchlab.kermit.Kermit
 import co.touchlab.stately.ensureNeverFrozen
 import com.ragdroid.clayground.shared.ui.base.GenericNativeViewModel
 import com.ragdroid.clayground.shared.ui.base.MviViewModel
@@ -18,9 +19,10 @@ import kotlinx.coroutines.launch
 @FlowPreview
 class NativeViewModel<State, Event, ViewEffect>(
     private val viewModel: GenericNativeViewModel<State, Event, ViewEffect>,
-    private val nativeCallback: NativeCallback<State, Event, ViewEffect>
+    private val nativeCallback: NativeCallback<State, Event, ViewEffect>,
+    private val kermit: Kermit
 ) {
-    private val mainScope = MainScope(Dispatchers.Main)
+    private val mainScope = MainScope(Dispatchers.Main, kermit)
     init {
         ensureNeverFrozen()
         initLoop()
