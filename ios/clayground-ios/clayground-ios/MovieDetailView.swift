@@ -10,26 +10,35 @@ import shared
 
 final class MovieDetailViewState: ObservableObject {
 	let collector = Collector()
-	lazy var viewModel: NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect> = NativeViewModel(
-		viewModel: clayground_iosApp.appComponent!.resolve(MovieDetailViewModel.self)!,
-		nativeCallback: collector)
+    lazy var viewModel = NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>(viewModel: clayground_iosApp.appComponent!.resolve(MovieDetailViewModel.self)!, nativeCallback: collector)
 
 	func handleOnAppear() {
-		viewModel.dispatchEvent(event: MovieDetailEvent.Load())
+        viewModel.dispatchEvent(event: MovieDetailEvent.Load())
 	}
 
 	func handleOnDisappear() {
-		viewModel.onDestroy()
+//		viewModel.onDestroy()
 	}
 }
 
 extension MovieDetailViewState {
 	final class Collector: NativeCallback<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect> {
 		func handleViewEffects(viewEffect: MovieDetailViewEffect) {
+            PlatformKt.kermitLogger().d(message: "Inside view effects: \(viewEffect)", tag: "MovieDetailViewState", throwable: nil)
 		}
 		func render(state: MovieDetailState) {
+            PlatformKt.kermitLogger().d(message: "Inside render: \(state)", tag: "MovieDetailViewState", throwable: nil)
+
 		}
 	}
+    final class NewCollector: Kotlinx_coroutines_coreFlowCollector {
+        func emit(value: Any?, completionHandler: @escaping (KotlinUnit?, Error?) -> Void) {
+            print("Inside NewCollecttor: \(value)")
+        }
+        
+        
+    }
+    
 }
 
 struct MovieDetailView: View {
