@@ -68,6 +68,9 @@ class MovieDetailViewModel(
     }
 
     override suspend fun dispatchEvent(event: MovieDetailEvent) {
+        kermit.d {
+            "inside MovieDetailViewModel: dispatch Event with $event"
+        }
         eventsFlow.emit(event)
     }
 

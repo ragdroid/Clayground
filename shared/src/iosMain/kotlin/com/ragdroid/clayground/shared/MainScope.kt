@@ -1,6 +1,6 @@
 package com.ragdroid.clayground.shared
 
-import co.touchlab.kermit.Kermit
+import co.touchlab.kermit.Logger
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -9,13 +9,11 @@ import kotlin.coroutines.CoroutineContext
 
 class MainScope(
     private val mainContext: CoroutineContext,
-    private val kermit: Kermit
+    private val kermit: Logger
 ): CoroutineScope {
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        kermit.d {
-            throwable.printStackTrace()
-            throwable.message ?: "Unknown Error in Coroutines"
-        }
+        throwable.printStackTrace()
+        kermit.d("MainScope", throwable.message ?: "Unknown Error")
     }
     override val coroutineContext: CoroutineContext
         get() = mainContext + supervisorJob

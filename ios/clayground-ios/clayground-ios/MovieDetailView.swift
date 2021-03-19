@@ -12,8 +12,7 @@ final class MovieDetailViewState: ObservableObject {
 	let collector = Collector()
 	lazy var viewModel: NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect> = NativeViewModel(
 		viewModel: clayground_iosApp.appComponent!.resolve(MovieDetailViewModel.self)!,
-		nativeCallback: collector
-	)
+		nativeCallback: collector)
 
 	func handleOnAppear() {
 		viewModel.dispatchEvent(event: MovieDetailEvent.Load())
