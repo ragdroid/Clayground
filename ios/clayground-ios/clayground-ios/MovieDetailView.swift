@@ -23,11 +23,11 @@ final class MovieDetailViewState: ObservableObject {
 
 extension MovieDetailViewState {
 	final class Collector: NativeCallback<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect> {
-		func handleViewEffects(viewEffect: MovieDetailViewEffect) {
-            PlatformKt.kermitLogger().d(message: "Inside view effects: \(viewEffect)", tag: "MovieDetailViewState", throwable: nil)
+		override func handleViewEffects(viewEffect: MovieDetailViewEffect?) {
+            PlatformKt.kermitLogger().d(message: "Inside view effects: \(viewEffect!)", tag: "MovieDetailViewState", throwable: nil)
 		}
-		func render(state: MovieDetailState) {
-            PlatformKt.kermitLogger().d(message: "Inside render: \(state)", tag: "MovieDetailViewState", throwable: nil)
+		override func render(state: MovieDetailState?) {
+            PlatformKt.kermitLogger().d(message: "Inside render: \(state!)", tag: "MovieDetailViewState", throwable: nil)
 
 		}
 	}
