@@ -16,7 +16,8 @@ import kotlinx.coroutines.launch
 @FlowPreview
 class NativeViewModel<State, Event, ViewEffect>(
     private val viewModel: GenericNativeViewModel<State, Event, ViewEffect>,
-    private val nativeCallback: NativeCallback<State, Event, ViewEffect>
+    private val render: (State) -> Unit,
+    private val viewEffectHandler: (ViewEffect) -> Unit
 ) {
     val kermit = kermitLogger()
     private val mainScope = kotlinx.coroutines.MainScope()
@@ -38,11 +39,11 @@ class NativeViewModel<State, Event, ViewEffect>(
         mainScope.launch {
             viewModel.stateFlow.collect {
                 kermit.d("inside stateFlow collect $it", "NativeViewModel")
-                nativeCallback.render(it as State)
+                render(it as State)
             }
             viewModel.uiEffectsFlow.collect {
                 kermit.d("inside uiEffectsFLow collect $it", "NativeViewModel")
-                nativeCallback.handleViewEffects(it as ViewEffect)
+                viewEffectHandler(it as ViewEffect)
             }
         }
     }
@@ -51,9 +52,4 @@ class NativeViewModel<State, Event, ViewEffect>(
         kermit.d("onDestroy called", "NativeViewModel")
         mainScope.cancel()
     }
-}
-
-abstract class NativeCallback<S, E, VF> {
-    abstract fun render(state: S)
-    abstract fun handleViewEffects(viewEffect: VF)
 }
