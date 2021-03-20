@@ -13,6 +13,7 @@
 		3D0A1B8225FE32BE00B4A2FE /* clayground_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A1B8125FE32BE00B4A2FE /* clayground_iosTests.swift */; };
 		3D0A1B8D25FE32BF00B4A2FE /* clayground_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A1B8C25FE32BF00B4A2FE /* clayground_iosUITests.swift */; };
 		3DB1B90E26052C1D009B5DAB /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1B90D26052C1D009B5DAB /* MovieDetailView.swift */; };
+		3DB46FA826067FBD000F6240 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB46FA726067FBD000F6240 /* LoaderView.swift */; };
 		79EB0BB2685D0070F6C5920C /* Pods_clayground_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C02270D5198EB6DD946335 /* Pods_clayground_iosTests.framework */; };
 		891F504002324E7008A915E1 /* Pods_clayground_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A77B448838AE4DE5A68D9C9 /* Pods_clayground_ios.framework */; };
 		C95A1EC7B9192745C4113C56 /* Pods_clayground_ios_clayground_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72EFAD5A3953C443971FBC5 /* Pods_clayground_ios_clayground_iosUITests.framework */; };
@@ -49,6 +50,7 @@
 		3D0A1B8C25FE32BF00B4A2FE /* clayground_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_iosUITests.swift; sourceTree = "<group>"; };
 		3D0A1B8E25FE32BF00B4A2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB1B90D26052C1D009B5DAB /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		3DB46FA726067FBD000F6240 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		4A77B448838AE4DE5A68D9C9 /* Pods_clayground_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clayground_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8E0698C9459FB2D1AAA304 /* Pods-clayground-ios-clayground-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-ios-clayground-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-clayground-ios-clayground-iosUITests/Pods-clayground-ios-clayground-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92C9BFF557F443E28D54DE35 /* Pods-clayground-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-clayground-iosTests/Pods-clayground-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				3D0A1B6F25FE32BD00B4A2FE /* clayground_iosApp.swift */,
 				3DB1B90D26052C1D009B5DAB /* MovieDetailView.swift */,
+				3DB46FA726067FBD000F6240 /* LoaderView.swift */,
 				3D0A1B7325FE32BE00B4A2FE /* Assets.xcassets */,
 				3D0A1B7825FE32BE00B4A2FE /* Info.plist */,
 				3D0A1B7525FE32BE00B4A2FE /* Preview Content */,
@@ -409,6 +412,7 @@
 			files = (
 				3DB1B90E26052C1D009B5DAB /* MovieDetailView.swift in Sources */,
 				3D0A1B7025FE32BD00B4A2FE /* clayground_iosApp.swift in Sources */,
+				3DB46FA826067FBD000F6240 /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
