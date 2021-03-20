@@ -7,15 +7,24 @@ import com.ragdroid.clayground.shared.ui.base.GenericNativeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.ConflatedBroadcastChannel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flatMapMerge
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.merge
+import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.scan
 
 @FlowPreview
@@ -28,22 +37,23 @@ class MovieDetailViewModel(
     init {
         ensureNeverFrozen()
     }
-    private val eventsFlow = MutableSharedFlow<MovieDetailEvent>(
-        replay = 0
-    )
-    private val sideEffectsFlow = MutableSharedFlow<MovieDetailSideEffect>(
-        replay = 0
-    )
-    private val _uiEffectsFlow = MutableSharedFlow<MovieDetailViewEffect>()
-    override val uiEffectsFlow: SharedFlow<MovieDetailViewEffect>
-        get() = _uiEffectsFlow
+    //TODO should this be a normal channel instead?
+    private val eventsFlow = MutableStateFlow<MovieDetailEvent?>(null)
+    private val sideEffectsFlow = Channel<MovieDetailSideEffect>(Channel.UNLIMITED)
 
-    private val _stateFlow = MutableStateFlow<MovieDetailState>(MovieDetailState())
-    override val stateFlow: StateFlow<MovieDetailState>
+    //TODO single live event, should we use channel with buffer 0? we shouldn't conflate in this case
+    //we need all nav events
+    private val _uiEffectsFlow = ConflatedBroadcastChannel<MovieDetailViewEffect>()
+    override val uiEffectsFlow: Flow<MovieDetailViewEffect>
+        get() = _uiEffectsFlow.asFlow()
+
+    private val _stateFlow = MutableStateFlow(MovieDetailState())
+    override val stateFlow: Flow<MovieDetailState>
         get() = _stateFlow
 
     override fun initializeIn(viewModelScope: CoroutineScope) {
         val resultsFlow = sideEffectsFlow
+            .consumeAsFlow()
             .flatMapMerge {
                 kermit.d { "Side Effect: $it" }
                 val movieDetailSideEffectHandler = MovieDetailSideEffectHandler(movieDetailRepository)
@@ -54,9 +64,9 @@ class MovieDetailViewModel(
                 kermit.d { "Event: $it" }
             }
             .scan(MovieDetailState()) { state, event ->
-                val next = MovieDetailUpdate().update(state, event)
+                val next = MovieDetailUpdate().update(state, event ?: return@scan state)
                 next.effects.forEach {
-                    sideEffectsFlow.emit(it)
+                    sideEffectsFlow.send(it)
                 }
                 if (next.hasModel()) next.safeModel() else state
             }
@@ -64,13 +74,26 @@ class MovieDetailViewModel(
             .onEach {
                 _stateFlow.value = it
                 kermit.d { "State $it" }
-            }.launchIn(viewModelScope)
+            }
+            .catch {
+                kermit.d {
+                    it.printStackTrace()
+                    "Error $it"
+                }
+            }
+            .launchIn(viewModelScope)
     }
 
     override suspend fun dispatchEvent(event: MovieDetailEvent) {
         kermit.d {
             "inside MovieDetailViewModel: dispatch Event with $event"
         }
+        eventsFlow.onCompletion {
+            kermit.d {
+                "MovieDetailViewMode: eventsFlow completed"
+            }
+        }
+        merge(flowOf(event), eventsFlow)
         eventsFlow.emit(event)
     }
 

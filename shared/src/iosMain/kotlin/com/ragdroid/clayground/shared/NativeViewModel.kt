@@ -6,7 +6,10 @@ import com.ragdroid.clayground.shared.ui.base.GenericNativeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
@@ -16,7 +19,7 @@ class NativeViewModel<State, Event, ViewEffect>(
     private val nativeCallback: NativeCallback<State, Event, ViewEffect>
 ) {
     val kermit = kermitLogger()
-    private val mainScope = MainScope(Dispatchers.Main, kermit)
+    private val mainScope = kotlinx.coroutines.MainScope()
     init {
         ensureNeverFrozen()
         initLoop()
@@ -24,7 +27,7 @@ class NativeViewModel<State, Event, ViewEffect>(
     fun dispatchEvent(event: Event) {
         kermit.d("inside dispatch Event with $event", "NativeViewModel")
         mainScope.launch {
-            kermit.d("inside dispatch Event launch $event", "NativeViewModel")
+            kermit.d("inside dispatch Event launch $event isActive $isActive", "NativeViewModel")
             viewModel.dispatchEvent(event)
         }
         kermit.d("inside dispatch Event end with $event", "NativeViewModel")
@@ -34,21 +37,23 @@ class NativeViewModel<State, Event, ViewEffect>(
         viewModel.initializeIn(mainScope)
         mainScope.launch {
             viewModel.stateFlow.collect {
-                nativeCallback.render(it)
+                kermit.d("inside stateFlow collect $it", "NativeViewModel")
+                nativeCallback.render(it as State)
             }
             viewModel.uiEffectsFlow.collect {
-                nativeCallback.handleViewEffects(it)
+                kermit.d("inside uiEffectsFLow collect $it", "NativeViewModel")
+                nativeCallback.handleViewEffects(it as ViewEffect)
             }
         }
     }
 
     fun onDestroy() {
         kermit.d("onDestroy called", "NativeViewModel")
-        mainScope.onDestroy()
+        mainScope.cancel()
     }
 }
 
 abstract class NativeCallback<S, E, VF> {
-    fun render(state: S) {}
-    fun handleViewEffects(viewEffect: VF) {}
+    abstract fun render(state: S)
+    abstract fun handleViewEffects(viewEffect: VF)
 }

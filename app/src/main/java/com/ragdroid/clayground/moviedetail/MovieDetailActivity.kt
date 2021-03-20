@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.ragdroid.clayground.shared.ui.moviedetail.LoadingState
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailEvent
+import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailState
 import com.ragdroid.clayground.theme.MovieTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -36,7 +37,7 @@ class MovieDetailActivity: AppCompatActivity() {
         setContent {
             val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
-                val state = viewModel.stateFlow.collectAsState().value
+                val state = viewModel.stateFlow.collectAsState(MovieDetailState()).value
                 Loader(loadingState = state.loadingState)
                 Column {
                     MovieTitle(state.movieDetails?.title)
