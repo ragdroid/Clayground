@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0191C124951E6DB8DF5D0E9C /* Pods_clayground_mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C223A41CF838E3781EDCE01 /* Pods_clayground_mac.framework */; };
+		37D64CA97DB08DC064722C4B /* Pods_clayground_macTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E598122D30572878A70588FD /* Pods_clayground_macTests.framework */; };
 		3DFA543326076AB500739EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA543226076AB500739EE1 /* AppDelegate.swift */; };
 		3DFA543526076AB500739EE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA543426076AB500739EE1 /* ContentView.swift */; };
 		3DFA543726076AB600739EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA543626076AB600739EE1 /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 		3DFA543D26076AB600739EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA543B26076AB600739EE1 /* Main.storyboard */; };
 		3DFA544926076AB600739EE1 /* clayground_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA544826076AB600739EE1 /* clayground_macTests.swift */; };
 		3DFA545426076AB600739EE1 /* clayground_macUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA545326076AB600739EE1 /* clayground_macUITests.swift */; };
+		B71AD159924CBB90D5392ECF /* Pods_clayground_mac_clayground_macUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE3D816181BF03AF3A6BDEA /* Pods_clayground_mac_clayground_macUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C223A41CF838E3781EDCE01 /* Pods_clayground_mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clayground_mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E45C0B108AE5C58F3D9639F /* Pods-clayground-macTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-macTests.debug.xcconfig"; path = "Target Support Files/Pods-clayground-macTests/Pods-clayground-macTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3DFA542F26076AB500739EE1 /* clayground-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFA543226076AB500739EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFA543426076AB500739EE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +53,13 @@
 		3DFA544F26076AB600739EE1 /* clayground-macUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-macUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFA545326076AB600739EE1 /* clayground_macUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_macUITests.swift; sourceTree = "<group>"; };
 		3DFA545526076AB600739EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AAAB029B25760F9D55921F0 /* Pods-clayground-mac-clayground-macUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-mac-clayground-macUITests.debug.xcconfig"; path = "Target Support Files/Pods-clayground-mac-clayground-macUITests/Pods-clayground-mac-clayground-macUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EE3D816181BF03AF3A6BDEA /* Pods_clayground_mac_clayground_macUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clayground_mac_clayground_macUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A695C2CCE7FCE7F76D2588 /* Pods-clayground-macTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-macTests.release.xcconfig"; path = "Target Support Files/Pods-clayground-macTests/Pods-clayground-macTests.release.xcconfig"; sourceTree = "<group>"; };
+		7438DBC045AB376D414AF44E /* Pods-clayground-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-mac.debug.xcconfig"; path = "Target Support Files/Pods-clayground-mac/Pods-clayground-mac.debug.xcconfig"; sourceTree = "<group>"; };
+		AF451EC53B2EB40CBFF4EBE1 /* Pods-clayground-mac-clayground-macUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-mac-clayground-macUITests.release.xcconfig"; path = "Target Support Files/Pods-clayground-mac-clayground-macUITests/Pods-clayground-mac-clayground-macUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC5AFAD8F7CB1C72EF7A7355 /* Pods-clayground-mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-mac.release.xcconfig"; path = "Target Support Files/Pods-clayground-mac/Pods-clayground-mac.release.xcconfig"; sourceTree = "<group>"; };
+		E598122D30572878A70588FD /* Pods_clayground_macTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clayground_macTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0191C124951E6DB8DF5D0E9C /* Pods_clayground_mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D64CA97DB08DC064722C4B /* Pods_clayground_macTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +83,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71AD159924CBB90D5392ECF /* Pods_clayground_mac_clayground_macUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37F5AC6ACE14EF886E4AEEDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7438DBC045AB376D414AF44E /* Pods-clayground-mac.debug.xcconfig */,
+				DC5AFAD8F7CB1C72EF7A7355 /* Pods-clayground-mac.release.xcconfig */,
+				4AAAB029B25760F9D55921F0 /* Pods-clayground-mac-clayground-macUITests.debug.xcconfig */,
+				AF451EC53B2EB40CBFF4EBE1 /* Pods-clayground-mac-clayground-macUITests.release.xcconfig */,
+				1E45C0B108AE5C58F3D9639F /* Pods-clayground-macTests.debug.xcconfig */,
+				63A695C2CCE7FCE7F76D2588 /* Pods-clayground-macTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3DFA542626076AB500739EE1 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +110,8 @@
 				3DFA544726076AB600739EE1 /* clayground-macTests */,
 				3DFA545226076AB600739EE1 /* clayground-macUITests */,
 				3DFA543026076AB500739EE1 /* Products */,
+				37F5AC6ACE14EF886E4AEEDA /* Pods */,
+				5650EBEB65653EFD82193E5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +165,16 @@
 			path = "clayground-macUITests";
 			sourceTree = "<group>";
 		};
+		5650EBEB65653EFD82193E5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C223A41CF838E3781EDCE01 /* Pods_clayground_mac.framework */,
+				4EE3D816181BF03AF3A6BDEA /* Pods_clayground_mac_clayground_macUITests.framework */,
+				E598122D30572878A70588FD /* Pods_clayground_macTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DFA545826076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-mac" */;
 			buildPhases = (
+				DD4285BB747E9AD45A00F401 /* [CP] Check Pods Manifest.lock */,
 				3DFA542B26076AB500739EE1 /* Sources */,
 				3DFA542C26076AB500739EE1 /* Frameworks */,
 				3DFA542D26076AB500739EE1 /* Resources */,
+				085220F2489751E8EB716939 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +201,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DFA545B26076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-macTests" */;
 			buildPhases = (
+				38864F5FF20D34B011703CD4 /* [CP] Check Pods Manifest.lock */,
 				3DFA544026076AB600739EE1 /* Sources */,
 				3DFA544126076AB600739EE1 /* Frameworks */,
 				3DFA544226076AB600739EE1 /* Resources */,
@@ -177,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DFA545E26076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-macUITests" */;
 			buildPhases = (
+				4DAEB4A3EF28896A7A695A38 /* [CP] Check Pods Manifest.lock */,
 				3DFA544B26076AB600739EE1 /* Sources */,
 				3DFA544C26076AB600739EE1 /* Frameworks */,
 				3DFA544D26076AB600739EE1 /* Resources */,
+				83C93FEAE96A950A3B850951 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,6 +304,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		085220F2489751E8EB716939 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-clayground-mac/Pods-clayground-mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-clayground-mac/Pods-clayground-mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-clayground-mac/Pods-clayground-mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38864F5FF20D34B011703CD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-clayground-macTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DAEB4A3EF28896A7A695A38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-clayground-mac-clayground-macUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83C93FEAE96A950A3B850951 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-clayground-mac-clayground-macUITests/Pods-clayground-mac-clayground-macUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-clayground-mac-clayground-macUITests/Pods-clayground-mac-clayground-macUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-clayground-mac-clayground-macUITests/Pods-clayground-mac-clayground-macUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD4285BB747E9AD45A00F401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-clayground-mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DFA542B26076AB500739EE1 /* Sources */ = {
@@ -430,6 +578,7 @@
 		};
 		3DFA545926076AB600739EE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7438DBC045AB376D414AF44E /* Pods-clayground-mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,7 +586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"clayground-mac/Preview Content\"";
-				DEVELOPMENT_TEAM = G436LJ5F52;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "clayground-mac/Info.plist";
@@ -454,6 +603,7 @@
 		};
 		3DFA545A26076AB600739EE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC5AFAD8F7CB1C72EF7A7355 /* Pods-clayground-mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,7 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"clayground-mac/Preview Content\"";
-				DEVELOPMENT_TEAM = G436LJ5F52;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "clayground-mac/Info.plist";
@@ -478,6 +628,7 @@
 		};
 		3DFA545C26076AB600739EE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E45C0B108AE5C58F3D9639F /* Pods-clayground-macTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -500,6 +651,7 @@
 		};
 		3DFA545D26076AB600739EE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63A695C2CCE7FCE7F76D2588 /* Pods-clayground-macTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +674,7 @@
 		};
 		3DFA545F26076AB600739EE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AAAB029B25760F9D55921F0 /* Pods-clayground-mac-clayground-macUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,6 +695,7 @@
 		};
 		3DFA546026076AB600739EE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF451EC53B2EB40CBFF4EBE1 /* Pods-clayground-mac-clayground-macUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
