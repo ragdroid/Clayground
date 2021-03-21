@@ -3,13 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D3033402607C76A00820FE3 /* Pods_clayground_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D198AFCEBF70C31D18D74EAE /* Pods_clayground_ios.framework */; };
-		3D8B78BF2607C7FC00082F29 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B78BD2607C7FC00082F29 /* MovieDetailView.swift */; };
-		3D8B78C02607C7FC00082F29 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B78BE2607C7FC00082F29 /* LoaderView.swift */; };
+		3DDE72872607E4A3000AA288 /* clayground-shared in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDE72862607E4A3000AA288 /* clayground-shared */; };
 		3DF66F2E2607BBE50043A9A5 /* clayground_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */; };
 		3DF66F322607BBE60043A9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F312607BBE60043A9A5 /* Assets.xcassets */; };
 		3DF66F352607BBE60043A9A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */; };
@@ -48,8 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D8B78BD2607C7FC00082F29 /* MovieDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
-		3D8B78BE2607C7FC00082F29 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		3D4C4A9C2607E37600B48C79 /* clayground-shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "clayground-shared"; path = "../clayground-shared"; sourceTree = "<group>"; };
 		3DF66F2A2607BBE50043A9A5 /* clayground-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_iosApp.swift; sourceTree = "<group>"; };
 		3DF66F312607BBE60043A9A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,9 +58,6 @@
 		3DF66F462607BBE60043A9A5 /* clayground-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF66F4A2607BBE60043A9A5 /* clayground_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_iosUITests.swift; sourceTree = "<group>"; };
 		3DF66F4C2607BBE60043A9A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D198AFCEBF70C31D18D74EAE /* Pods_clayground_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clayground_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA49B89C59FCB057819C538F /* Pods-clayground-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-ios.release.xcconfig"; path = "Target Support Files/Pods-clayground-ios/Pods-clayground-ios.release.xcconfig"; sourceTree = "<group>"; };
-		FEADFA925141547F44090307 /* Pods-clayground-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-ios.debug.xcconfig"; path = "Target Support Files/Pods-clayground-ios/Pods-clayground-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D3033402607C76A00820FE3 /* Pods_clayground_ios.framework in Frameworks */,
+				3DDE72872607E4A3000AA288 /* clayground-shared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,15 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DDE72852607E4A3000AA288 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3DF66F212607BBE50043A9A5 = {
 			isa = PBXGroup;
 			children = (
+				3D4C4A9C2607E37600B48C79 /* clayground-shared */,
 				3DF66F2C2607BBE50043A9A5 /* clayground-ios */,
 				3DF66F3E2607BBE60043A9A5 /* clayground-iosTests */,
 				3DF66F492607BBE60043A9A5 /* clayground-iosUITests */,
 				3DF66F2B2607BBE50043A9A5 /* Products */,
-				3E5872A9C9A995DCBECDCF02 /* Pods */,
-				521C4D28985778DBEFDD11ED /* Frameworks */,
+				3DDE72852607E4A3000AA288 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */,
-				3D8B78BE2607C7FC00082F29 /* LoaderView.swift */,
-				3D8B78BD2607C7FC00082F29 /* MovieDetailView.swift */,
 				3DF66F312607BBE60043A9A5 /* Assets.xcassets */,
 				3DF66F362607BBE60043A9A5 /* Info.plist */,
 				3DF66F332607BBE60043A9A5 /* Preview Content */,
@@ -153,23 +152,6 @@
 			path = "clayground-iosUITests";
 			sourceTree = "<group>";
 		};
-		3E5872A9C9A995DCBECDCF02 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FEADFA925141547F44090307 /* Pods-clayground-ios.debug.xcconfig */,
-				FA49B89C59FCB057819C538F /* Pods-clayground-ios.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		521C4D28985778DBEFDD11ED /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D198AFCEBF70C31D18D74EAE /* Pods_clayground_ios.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,18 +159,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DF66F4F2607BBE60043A9A5 /* Build configuration list for PBXNativeTarget "clayground-ios" */;
 			buildPhases = (
-				3036CDFFC4A62A7F570FBAF2 /* [CP] Check Pods Manifest.lock */,
 				3DF66F262607BBE50043A9A5 /* Sources */,
 				3DF66F272607BBE50043A9A5 /* Frameworks */,
 				3DF66F282607BBE50043A9A5 /* Resources */,
 				3D2A26562607BCA4008F7E26 /* Embed Frameworks */,
-				ED8AC256F6A35BBEBE3CC511 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "clayground-ios";
+			packageProductDependencies = (
+				3DDE72862607E4A3000AA288 /* clayground-shared */,
+			);
 			productName = "clayground-ios";
 			productReference = 3DF66F2A2607BBE50043A9A5 /* clayground-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -297,55 +280,11 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3036CDFFC4A62A7F570FBAF2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-clayground-ios-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED8AC256F6A35BBEBE3CC511 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-clayground-ios/Pods-clayground-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-clayground-ios/Pods-clayground-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-clayground-ios/Pods-clayground-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3DF66F262607BBE50043A9A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D8B78BF2607C7FC00082F29 /* MovieDetailView.swift in Sources */,
-				3D8B78C02607C7FC00082F29 /* LoaderView.swift in Sources */,
 				3DF66F2E2607BBE50043A9A5 /* clayground_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +439,6 @@
 		};
 		3DF66F502607BBE60043A9A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEADFA925141547F44090307 /* Pods-clayground-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,7 +461,6 @@
 		};
 		3DF66F512607BBE60043A9A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA49B89C59FCB057819C538F /* Pods-clayground-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -668,6 +605,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DDE72862607E4A3000AA288 /* clayground-shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "clayground-shared";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3DF66F222607BBE50043A9A5 /* Project object */;
 }
