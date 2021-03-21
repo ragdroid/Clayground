@@ -8,11 +8,8 @@ plugins {
     kotlin("plugin.serialization")
     id("com.codingfeline.buildkonfig")
     id("com.android.library")
-    id("org.jetbrains.kotlin.native.cocoapods")
+    id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
 }
-
-// CocoaPods requires the podspec to have a version.
-version = "1.0"
 
 //Workaround for issue https://youtrack.jetbrains.com/issue/KT-43944
 android {
@@ -29,12 +26,19 @@ android {
 kotlin {
 
     android()
-    ios ("ios")
-    macosX64("macOS")
-    cocoapods {
-        // Configure fields required by CocoaPods.
-        summary = "Some description for a Kotlin/Native module"
-        homepage = "Link to a Kotlin/Native module homepage"
+    ios {
+        binaries {
+            framework {
+                baseName = "shared"
+            }
+        }
+    }
+    macosX64("macOS") {
+        binaries {
+            framework {
+                baseName = "shared"
+            }
+        }
     }
 
     sourceSets {
@@ -80,6 +84,7 @@ kotlin {
         }
 
         val iosTest by getting
+
         val macOSMain by getting {
             dependencies {
                 implementation(Ktor.mac)
@@ -121,5 +126,14 @@ buildkonfig {
     packageName = "com.ragdroid.clayground.shared"
     defaultConfigs {
         buildConfigField( STRING, "TMDB_API_TOKEN", properties["tmdb_api_token"] as String)
+    }
+}
+
+multiplatformSwiftPackage {
+    packageName("shared")
+    swiftToolsVersion("5.3")
+    targetPlatforms {
+        iOS { v("13") }
+        macOS { v("10") }
     }
 }
