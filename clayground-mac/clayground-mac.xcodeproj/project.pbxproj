@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DFA543326076AB500739EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA543226076AB500739EE1 /* AppDelegate.swift */; };
+		3DFA543526076AB500739EE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA543426076AB500739EE1 /* ContentView.swift */; };
+		3DFA543726076AB600739EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA543626076AB600739EE1 /* Assets.xcassets */; };
+		3DFA543A26076AB600739EE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA543926076AB600739EE1 /* Preview Assets.xcassets */; };
+		3DFA543D26076AB600739EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA543B26076AB600739EE1 /* Main.storyboard */; };
+		3DFA544926076AB600739EE1 /* clayground_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA544826076AB600739EE1 /* clayground_macTests.swift */; };
+		3DFA545426076AB600739EE1 /* clayground_macUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA545326076AB600739EE1 /* clayground_macUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DFA544526076AB600739EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DFA542726076AB500739EE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DFA542E26076AB500739EE1;
+			remoteInfo = "clayground-mac";
+		};
+		3DFA545026076AB600739EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DFA542726076AB500739EE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DFA542E26076AB500739EE1;
+			remoteInfo = "clayground-mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3DFA542F26076AB500739EE1 /* clayground-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFA543226076AB500739EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DFA543426076AB500739EE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3DFA543626076AB600739EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DFA543926076AB600739EE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DFA543C26076AB600739EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DFA543E26076AB600739EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DFA543F26076AB600739EE1 /* clayground_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clayground_mac.entitlements; sourceTree = "<group>"; };
+		3DFA544426076AB600739EE1 /* clayground-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFA544826076AB600739EE1 /* clayground_macTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_macTests.swift; sourceTree = "<group>"; };
+		3DFA544A26076AB600739EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DFA544F26076AB600739EE1 /* clayground-macUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-macUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFA545326076AB600739EE1 /* clayground_macUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_macUITests.swift; sourceTree = "<group>"; };
+		3DFA545526076AB600739EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DFA542C26076AB500739EE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFA544126076AB600739EE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFA544C26076AB600739EE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DFA542626076AB500739EE1 = {
+			isa = PBXGroup;
+			children = (
+				3DFA543126076AB500739EE1 /* clayground-mac */,
+				3DFA544726076AB600739EE1 /* clayground-macTests */,
+				3DFA545226076AB600739EE1 /* clayground-macUITests */,
+				3DFA543026076AB500739EE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DFA543026076AB500739EE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DFA542F26076AB500739EE1 /* clayground-mac.app */,
+				3DFA544426076AB600739EE1 /* clayground-macTests.xctest */,
+				3DFA544F26076AB600739EE1 /* clayground-macUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DFA543126076AB500739EE1 /* clayground-mac */ = {
+			isa = PBXGroup;
+			children = (
+				3DFA543226076AB500739EE1 /* AppDelegate.swift */,
+				3DFA543426076AB500739EE1 /* ContentView.swift */,
+				3DFA543626076AB600739EE1 /* Assets.xcassets */,
+				3DFA543B26076AB600739EE1 /* Main.storyboard */,
+				3DFA543E26076AB600739EE1 /* Info.plist */,
+				3DFA543F26076AB600739EE1 /* clayground_mac.entitlements */,
+				3DFA543826076AB600739EE1 /* Preview Content */,
+			);
+			path = "clayground-mac";
+			sourceTree = "<group>";
+		};
+		3DFA543826076AB600739EE1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3DFA543926076AB600739EE1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DFA544726076AB600739EE1 /* clayground-macTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DFA544826076AB600739EE1 /* clayground_macTests.swift */,
+				3DFA544A26076AB600739EE1 /* Info.plist */,
+			);
+			path = "clayground-macTests";
+			sourceTree = "<group>";
+		};
+		3DFA545226076AB600739EE1 /* clayground-macUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3DFA545326076AB600739EE1 /* clayground_macUITests.swift */,
+				3DFA545526076AB600739EE1 /* Info.plist */,
+			);
+			path = "clayground-macUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DFA542E26076AB500739EE1 /* clayground-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFA545826076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-mac" */;
+			buildPhases = (
+				3DFA542B26076AB500739EE1 /* Sources */,
+				3DFA542C26076AB500739EE1 /* Frameworks */,
+				3DFA542D26076AB500739EE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "clayground-mac";
+			productName = "clayground-mac";
+			productReference = 3DFA542F26076AB500739EE1 /* clayground-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DFA544326076AB600739EE1 /* clayground-macTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFA545B26076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-macTests" */;
+			buildPhases = (
+				3DFA544026076AB600739EE1 /* Sources */,
+				3DFA544126076AB600739EE1 /* Frameworks */,
+				3DFA544226076AB600739EE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DFA544626076AB600739EE1 /* PBXTargetDependency */,
+			);
+			name = "clayground-macTests";
+			productName = "clayground-macTests";
+			productReference = 3DFA544426076AB600739EE1 /* clayground-macTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3DFA544E26076AB600739EE1 /* clayground-macUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFA545E26076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-macUITests" */;
+			buildPhases = (
+				3DFA544B26076AB600739EE1 /* Sources */,
+				3DFA544C26076AB600739EE1 /* Frameworks */,
+				3DFA544D26076AB600739EE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DFA545126076AB600739EE1 /* PBXTargetDependency */,
+			);
+			name = "clayground-macUITests";
+			productName = "clayground-macUITests";
+			productReference = 3DFA544F26076AB600739EE1 /* clayground-macUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DFA542726076AB500739EE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					3DFA542E26076AB500739EE1 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					3DFA544326076AB600739EE1 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 3DFA542E26076AB500739EE1;
+					};
+					3DFA544E26076AB600739EE1 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 3DFA542E26076AB500739EE1;
+					};
+				};
+			};
+			buildConfigurationList = 3DFA542A26076AB500739EE1 /* Build configuration list for PBXProject "clayground-mac" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DFA542626076AB500739EE1;
+			productRefGroup = 3DFA543026076AB500739EE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DFA542E26076AB500739EE1 /* clayground-mac */,
+				3DFA544326076AB600739EE1 /* clayground-macTests */,
+				3DFA544E26076AB600739EE1 /* clayground-macUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DFA542D26076AB500739EE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFA543D26076AB600739EE1 /* Main.storyboard in Resources */,
+				3DFA543A26076AB600739EE1 /* Preview Assets.xcassets in Resources */,
+				3DFA543726076AB600739EE1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFA544226076AB600739EE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFA544D26076AB600739EE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DFA542B26076AB500739EE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFA543526076AB500739EE1 /* ContentView.swift in Sources */,
+				3DFA543326076AB500739EE1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFA544026076AB600739EE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFA544926076AB600739EE1 /* clayground_macTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFA544B26076AB600739EE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFA545426076AB600739EE1 /* clayground_macUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DFA544626076AB600739EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DFA542E26076AB500739EE1 /* clayground-mac */;
+			targetProxy = 3DFA544526076AB600739EE1 /* PBXContainerItemProxy */;
+		};
+		3DFA545126076AB600739EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DFA542E26076AB500739EE1 /* clayground-mac */;
+			targetProxy = 3DFA545026076AB600739EE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DFA543B26076AB600739EE1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFA543C26076AB600739EE1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DFA545626076AB600739EE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DFA545726076AB600739EE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3DFA545926076AB600739EE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "clayground-mac/clayground_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"clayground-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "clayground-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3DFA545A26076AB600739EE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "clayground-mac/clayground_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"clayground-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "clayground-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3DFA545C26076AB600739EE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/clayground-mac.app/Contents/MacOS/clayground-mac";
+			};
+			name = Debug;
+		};
+		3DFA545D26076AB600739EE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/clayground-mac.app/Contents/MacOS/clayground-mac";
+			};
+			name = Release;
+		};
+		3DFA545F26076AB600739EE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground-macUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "clayground-mac";
+			};
+			name = Debug;
+		};
+		3DFA546026076AB600739EE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground-macUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "clayground-mac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DFA542A26076AB500739EE1 /* Build configuration list for PBXProject "clayground-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFA545626076AB600739EE1 /* Debug */,
+				3DFA545726076AB600739EE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFA545826076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFA545926076AB600739EE1 /* Debug */,
+				3DFA545A26076AB600739EE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFA545B26076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-macTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFA545C26076AB600739EE1 /* Debug */,
+				3DFA545D26076AB600739EE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFA545E26076AB600739EE1 /* Build configuration list for PBXNativeTarget "clayground-macUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFA545F26076AB600739EE1 /* Debug */,
+				3DFA546026076AB600739EE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DFA542726076AB500739EE1 /* Project object */;
+}
