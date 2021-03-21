@@ -38,7 +38,7 @@ object Ktor {
 
     const val android = "io.ktor:ktor-client-android:${Versions.ktor}"
     const val ios = "io.ktor:ktor-client-ios:${Versions.ktor}"
-
+    const val io = "io.ktor:ktor-client-cio:${Versions.ktor}"
 }
 
 object DI {
