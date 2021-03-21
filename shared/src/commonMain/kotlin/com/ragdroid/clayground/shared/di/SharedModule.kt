@@ -54,7 +54,9 @@ class SharedModule {
 
     companion object {
         val movieDetailViewModel: MovieDetailViewModel
-        get() = CommonModule.get().get<MovieDetailViewModel>()
+            get() = CommonModule.get().get<MovieDetailViewModel>()
+        val kermitLogger: Kermit
+            get() = CommonModule.get().get<Kermit>()
     }
 }
 

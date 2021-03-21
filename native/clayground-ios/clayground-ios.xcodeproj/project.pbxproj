@@ -10,7 +10,7 @@
 		3D3033402607C76A00820FE3 /* Pods_clayground_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D198AFCEBF70C31D18D74EAE /* Pods_clayground_ios.framework */; };
 		3D8B78BF2607C7FC00082F29 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B78BD2607C7FC00082F29 /* MovieDetailView.swift */; };
 		3D8B78C02607C7FC00082F29 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B78BE2607C7FC00082F29 /* LoaderView.swift */; };
-		3DF66F2E2607BBE50043A9A5 /* clayground_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */; };
+		3DF66F2E2607BBE50043A9A5 /* ClaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F2D2607BBE50043A9A5 /* ClaygroundApp.swift */; };
 		3DF66F322607BBE60043A9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F312607BBE60043A9A5 /* Assets.xcassets */; };
 		3DF66F352607BBE60043A9A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */; };
 		3DF66F402607BBE60043A9A5 /* clayground_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F3F2607BBE60043A9A5 /* clayground_iosTests.swift */; };
@@ -51,7 +51,7 @@
 		3D8B78BD2607C7FC00082F29 /* MovieDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		3D8B78BE2607C7FC00082F29 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3DF66F2A2607BBE50043A9A5 /* clayground-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_iosApp.swift; sourceTree = "<group>"; };
+		3DF66F2D2607BBE50043A9A5 /* ClaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaygroundApp.swift; sourceTree = "<group>"; };
 		3DF66F312607BBE60043A9A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DF66F362607BBE60043A9A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		3DF66F2C2607BBE50043A9A5 /* clayground-ios */ = {
 			isa = PBXGroup;
 			children = (
-				3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */,
+				3DF66F2D2607BBE50043A9A5 /* ClaygroundApp.swift */,
 				3D8B78BE2607C7FC00082F29 /* LoaderView.swift */,
 				3D8B78BD2607C7FC00082F29 /* MovieDetailView.swift */,
 				3DF66F312607BBE60043A9A5 /* Assets.xcassets */,
@@ -346,7 +346,7 @@
 			files = (
 				3D8B78BF2607C7FC00082F29 /* MovieDetailView.swift in Sources */,
 				3D8B78C02607C7FC00082F29 /* LoaderView.swift in Sources */,
-				3DF66F2E2607BBE50043A9A5 /* clayground_iosApp.swift in Sources */,
+				3DF66F2E2607BBE50043A9A5 /* ClaygroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

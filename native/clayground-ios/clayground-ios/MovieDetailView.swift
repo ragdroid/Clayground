@@ -14,14 +14,14 @@ final class MovieDetailViewState: ObservableObject {
 
 	lazy var viewModel = NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>(viewModel: kmpViewModel, render: handleRender, viewEffectHandler: handleViewEffect)
 
-	private lazy var kmpViewModel = clayground_iosApp.appComponent!.resolve(MovieDetailViewModel.self)!
+    private lazy var kmpViewModel = try! ClaygroundApp.inject(MovieDetailViewModel.self)!
 
-	private func handleRender(_ state: MovieDetailState?) {
+	private func handleRender(state: MovieDetailState?) {
 		isLoading = state?.loadingState == LoadingState.Loading()
 		name = state?.movieDetails?.title ?? "A movie has no name"
 	}
 
-	private func handleViewEffect(_ effect: MovieDetailViewEffect?) {
+	private func handleViewEffect(effect: MovieDetailViewEffect?) {
 	}
 
 	func handleOnAppear() {
