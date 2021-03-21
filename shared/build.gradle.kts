@@ -8,7 +8,9 @@ plugins {
     kotlin("plugin.serialization")
     id("com.codingfeline.buildkonfig")
     id("com.android.library")
+    id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
 }
+
 //Workaround for issue https://youtrack.jetbrains.com/issue/KT-43944
 android {
     configurations {
@@ -31,6 +33,14 @@ kotlin {
             }
         }
     }
+    macosX64("macOS") {
+        binaries {
+            framework {
+                baseName = "shared"
+            }
+        }
+    }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -74,6 +84,12 @@ kotlin {
         }
 
         val iosTest by getting
+
+        val macOSMain by getting {
+            dependencies {
+                implementation(Ktor.mac)
+            }
+        }
     }
 }
 
@@ -110,5 +126,14 @@ buildkonfig {
     packageName = "com.ragdroid.clayground.shared"
     defaultConfigs {
         buildConfigField( STRING, "TMDB_API_TOKEN", properties["tmdb_api_token"] as String)
+    }
+}
+
+multiplatformSwiftPackage {
+    packageName("shared")
+    swiftToolsVersion("5.3")
+    targetPlatforms {
+        iOS { v("13") }
+        macOS { v("10") }
     }
 }

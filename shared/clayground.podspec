@@ -14,9 +14,9 @@ Pod::Spec.new do |spec|
     spec.ios.deployment_target    = '14.0'
 
     spec.prepare_command = <<-SCRIPT
-      set -ev
-      cd ../
-      ./gradlew shared:packForXcode
-      cd shared
+        set -ev
+        cd ../
+        ./gradlew shared:packForXcode
+        cd shared
     SCRIPT
 end

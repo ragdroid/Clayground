@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D2A26142607BC60008F7E26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A26132607BC60008F7E26 /* AppDelegate.swift */; };
+		3D2A26182607BC61008F7E26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A26172607BC61008F7E26 /* Assets.xcassets */; };
+		3D2A261B2607BC62008F7E26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A261A2607BC62008F7E26 /* Preview Assets.xcassets */; };
+		3D2A261E2607BC62008F7E26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A261C2607BC62008F7E26 /* Main.storyboard */; };
+		3D2A262A2607BC62008F7E26 /* clayground_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A26292607BC62008F7E26 /* clayground_macTests.swift */; };
+		3D2A26352607BC62008F7E26 /* clayground_macUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A26342607BC62008F7E26 /* clayground_macUITests.swift */; };
+		3DB5B9362607C91C00CEEFFC /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB5B9302607C90200CEEFFC /* shared.xcframework */; };
+		3DB5B9372607C91C00CEEFFC /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB5B9302607C90200CEEFFC /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DB5B93C2607C95300CEEFFC /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5B93A2607C95300CEEFFC /* MovieDetailView.swift */; };
+		3DB5B93D2607C95300CEEFFC /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5B93B2607C95300CEEFFC /* LoaderView.swift */; };
+		FFFB4A67604E962FD10E525C /* Pods_clayground_mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E51E1B3AF8AB1B931642F78 /* Pods_clayground_mac.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D2A26262607BC62008F7E26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D2A26082607BC60008F7E26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D2A260F2607BC60008F7E26;
+			remoteInfo = "clayground-mac";
+		};
+		3D2A26312607BC62008F7E26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D2A26082607BC60008F7E26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D2A260F2607BC60008F7E26;
+			remoteInfo = "clayground-mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3D2A264C2607BC8F008F7E26 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3DB5B9372607C91C00CEEFFC /* shared.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3D2A26102607BC60008F7E26 /* clayground-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2A26132607BC60008F7E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D2A26172607BC61008F7E26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D2A261A2607BC62008F7E26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D2A261D2607BC62008F7E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D2A261F2607BC62008F7E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D2A26202607BC62008F7E26 /* clayground_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clayground_mac.entitlements; sourceTree = "<group>"; };
+		3D2A26252607BC62008F7E26 /* clayground-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2A26292607BC62008F7E26 /* clayground_macTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_macTests.swift; sourceTree = "<group>"; };
+		3D2A262B2607BC62008F7E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D2A26302607BC62008F7E26 /* clayground-macUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-macUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2A26342607BC62008F7E26 /* clayground_macUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_macUITests.swift; sourceTree = "<group>"; };
+		3D2A26362607BC62008F7E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB5B9302607C90200CEEFFC /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../../../shared/swiftpackage/shared.xcframework; sourceTree = "<group>"; };
+		3DB5B93A2607C95300CEEFFC /* MovieDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		3DB5B93B2607C95300CEEFFC /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		3E51E1B3AF8AB1B931642F78 /* Pods_clayground_mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clayground_mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		668988FE2A348A23B9CF35C9 /* Pods-clayground-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-mac.debug.xcconfig"; path = "Target Support Files/Pods-clayground-mac/Pods-clayground-mac.debug.xcconfig"; sourceTree = "<group>"; };
+		92715C17CFF513E1736D88F9 /* Pods-clayground-mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clayground-mac.release.xcconfig"; path = "Target Support Files/Pods-clayground-mac/Pods-clayground-mac.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D2A260D2607BC60008F7E26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB5B9362607C91C00CEEFFC /* shared.xcframework in Frameworks */,
+				FFFB4A67604E962FD10E525C /* Pods_clayground_mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D2A26222607BC62008F7E26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D2A262D2607BC62008F7E26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		169E023A399ADBB57BB3611F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				668988FE2A348A23B9CF35C9 /* Pods-clayground-mac.debug.xcconfig */,
+				92715C17CFF513E1736D88F9 /* Pods-clayground-mac.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3D2A26072607BC60008F7E26 = {
+			isa = PBXGroup;
+			children = (
+				3D2A26122607BC60008F7E26 /* clayground-mac */,
+				3D2A26282607BC62008F7E26 /* clayground-macTests */,
+				3D2A26332607BC62008F7E26 /* clayground-macUITests */,
+				3D2A26112607BC60008F7E26 /* Products */,
+				169E023A399ADBB57BB3611F /* Pods */,
+				89128C653D2E77AD518B63CF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3D2A26112607BC60008F7E26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A26102607BC60008F7E26 /* clayground-mac.app */,
+				3D2A26252607BC62008F7E26 /* clayground-macTests.xctest */,
+				3D2A26302607BC62008F7E26 /* clayground-macUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D2A26122607BC60008F7E26 /* clayground-mac */ = {
+			isa = PBXGroup;
+			children = (
+				3DB5B9302607C90200CEEFFC /* shared.xcframework */,
+				3D2A26132607BC60008F7E26 /* AppDelegate.swift */,
+				3DB5B93B2607C95300CEEFFC /* LoaderView.swift */,
+				3DB5B93A2607C95300CEEFFC /* MovieDetailView.swift */,
+				3D2A26172607BC61008F7E26 /* Assets.xcassets */,
+				3D2A261C2607BC62008F7E26 /* Main.storyboard */,
+				3D2A261F2607BC62008F7E26 /* Info.plist */,
+				3D2A26202607BC62008F7E26 /* clayground_mac.entitlements */,
+				3D2A26192607BC62008F7E26 /* Preview Content */,
+			);
+			path = "clayground-mac";
+			sourceTree = "<group>";
+		};
+		3D2A26192607BC62008F7E26 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A261A2607BC62008F7E26 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D2A26282607BC62008F7E26 /* clayground-macTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A26292607BC62008F7E26 /* clayground_macTests.swift */,
+				3D2A262B2607BC62008F7E26 /* Info.plist */,
+			);
+			path = "clayground-macTests";
+			sourceTree = "<group>";
+		};
+		3D2A26332607BC62008F7E26 /* clayground-macUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A26342607BC62008F7E26 /* clayground_macUITests.swift */,
+				3D2A26362607BC62008F7E26 /* Info.plist */,
+			);
+			path = "clayground-macUITests";
+			sourceTree = "<group>";
+		};
+		89128C653D2E77AD518B63CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E51E1B3AF8AB1B931642F78 /* Pods_clayground_mac.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D2A260F2607BC60008F7E26 /* clayground-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D2A26392607BC62008F7E26 /* Build configuration list for PBXNativeTarget "clayground-mac" */;
+			buildPhases = (
+				E60B8EA2B7135AD3F3595002 /* [CP] Check Pods Manifest.lock */,
+				3D2A260C2607BC60008F7E26 /* Sources */,
+				3D2A260D2607BC60008F7E26 /* Frameworks */,
+				3D2A260E2607BC60008F7E26 /* Resources */,
+				3D2A264C2607BC8F008F7E26 /* Embed Frameworks */,
+				D8A8A880F6558C7A6B66A4BC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "clayground-mac";
+			productName = "clayground-mac";
+			productReference = 3D2A26102607BC60008F7E26 /* clayground-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D2A26242607BC62008F7E26 /* clayground-macTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D2A263C2607BC62008F7E26 /* Build configuration list for PBXNativeTarget "clayground-macTests" */;
+			buildPhases = (
+				3D2A26212607BC62008F7E26 /* Sources */,
+				3D2A26222607BC62008F7E26 /* Frameworks */,
+				3D2A26232607BC62008F7E26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D2A26272607BC62008F7E26 /* PBXTargetDependency */,
+			);
+			name = "clayground-macTests";
+			productName = "clayground-macTests";
+			productReference = 3D2A26252607BC62008F7E26 /* clayground-macTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D2A262F2607BC62008F7E26 /* clayground-macUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D2A263F2607BC62008F7E26 /* Build configuration list for PBXNativeTarget "clayground-macUITests" */;
+			buildPhases = (
+				3D2A262C2607BC62008F7E26 /* Sources */,
+				3D2A262D2607BC62008F7E26 /* Frameworks */,
+				3D2A262E2607BC62008F7E26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D2A26322607BC62008F7E26 /* PBXTargetDependency */,
+			);
+			name = "clayground-macUITests";
+			productName = "clayground-macUITests";
+			productReference = 3D2A26302607BC62008F7E26 /* clayground-macUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D2A26082607BC60008F7E26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					3D2A260F2607BC60008F7E26 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					3D2A26242607BC62008F7E26 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 3D2A260F2607BC60008F7E26;
+					};
+					3D2A262F2607BC62008F7E26 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 3D2A260F2607BC60008F7E26;
+					};
+				};
+			};
+			buildConfigurationList = 3D2A260B2607BC60008F7E26 /* Build configuration list for PBXProject "clayground-mac" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D2A26072607BC60008F7E26;
+			productRefGroup = 3D2A26112607BC60008F7E26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D2A260F2607BC60008F7E26 /* clayground-mac */,
+				3D2A26242607BC62008F7E26 /* clayground-macTests */,
+				3D2A262F2607BC62008F7E26 /* clayground-macUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D2A260E2607BC60008F7E26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2A261E2607BC62008F7E26 /* Main.storyboard in Resources */,
+				3D2A261B2607BC62008F7E26 /* Preview Assets.xcassets in Resources */,
+				3D2A26182607BC61008F7E26 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D2A26232607BC62008F7E26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D2A262E2607BC62008F7E26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8A8A880F6558C7A6B66A4BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-clayground-mac/Pods-clayground-mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-clayground-mac/Pods-clayground-mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-clayground-mac/Pods-clayground-mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E60B8EA2B7135AD3F3595002 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-clayground-mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D2A260C2607BC60008F7E26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB5B93C2607C95300CEEFFC /* MovieDetailView.swift in Sources */,
+				3DB5B93D2607C95300CEEFFC /* LoaderView.swift in Sources */,
+				3D2A26142607BC60008F7E26 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D2A26212607BC62008F7E26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2A262A2607BC62008F7E26 /* clayground_macTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D2A262C2607BC62008F7E26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2A26352607BC62008F7E26 /* clayground_macUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D2A26272607BC62008F7E26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D2A260F2607BC60008F7E26 /* clayground-mac */;
+			targetProxy = 3D2A26262607BC62008F7E26 /* PBXContainerItemProxy */;
+		};
+		3D2A26322607BC62008F7E26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D2A260F2607BC60008F7E26 /* clayground-mac */;
+			targetProxy = 3D2A26312607BC62008F7E26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D2A261C2607BC62008F7E26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D2A261D2607BC62008F7E26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D2A26372607BC62008F7E26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D2A26382607BC62008F7E26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3D2A263A2607BC62008F7E26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 668988FE2A348A23B9CF35C9 /* Pods-clayground-mac.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "clayground-mac/clayground_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"clayground-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "clayground-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3D2A263B2607BC62008F7E26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92715C17CFF513E1736D88F9 /* Pods-clayground-mac.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "clayground-mac/clayground_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"clayground-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "clayground-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3D2A263D2607BC62008F7E26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/clayground-mac.app/Contents/MacOS/clayground-mac";
+			};
+			name = Debug;
+		};
+		3D2A263E2607BC62008F7E26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/clayground-mac.app/Contents/MacOS/clayground-mac";
+			};
+			name = Release;
+		};
+		3D2A26402607BC62008F7E26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-macUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "clayground-mac";
+			};
+			name = Debug;
+		};
+		3D2A26412607BC62008F7E26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G436LJ5F52;
+				INFOPLIST_FILE = "clayground-macUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-macUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "clayground-mac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D2A260B2607BC60008F7E26 /* Build configuration list for PBXProject "clayground-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D2A26372607BC62008F7E26 /* Debug */,
+				3D2A26382607BC62008F7E26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D2A26392607BC62008F7E26 /* Build configuration list for PBXNativeTarget "clayground-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D2A263A2607BC62008F7E26 /* Debug */,
+				3D2A263B2607BC62008F7E26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D2A263C2607BC62008F7E26 /* Build configuration list for PBXNativeTarget "clayground-macTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D2A263D2607BC62008F7E26 /* Debug */,
+				3D2A263E2607BC62008F7E26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D2A263F2607BC62008F7E26 /* Build configuration list for PBXNativeTarget "clayground-macUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D2A26402607BC62008F7E26 /* Debug */,
+				3D2A26412607BC62008F7E26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D2A26082607BC60008F7E26 /* Project object */;
+}
