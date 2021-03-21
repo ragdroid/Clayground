@@ -1,16 +1,23 @@
 PODS:
+  - Clayground (0.0.1)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
+  - Clayground (from `../../shared/`)
   - Swinject
 
 SPEC REPOS:
   trunk:
     - Swinject
 
+EXTERNAL SOURCES:
+  Clayground:
+    :path: "../../shared/"
+
 SPEC CHECKSUMS:
+  Clayground: c2ef06000aaf8688c32a466edc35850aeb2d745c
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: a104d36353fcba5d85d2471ceb402393c837c6f3
+PODFILE CHECKSUM: 6855e8888f9155f2309a95fef8ec84efa077199d
 
 COCOAPODS: 1.9.3

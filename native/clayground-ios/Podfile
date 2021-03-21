@@ -4,4 +4,5 @@
 target 'clayground-ios' do
   use_frameworks!
   pod 'Swinject'
+	pod 'Clayground', :path => '../../shared/'
 end

@@ -13,27 +13,10 @@ Pod::Spec.new do |spec|
     spec.platform                 = :ios
     spec.ios.deployment_target    = '14.0'
 
-    spec.pod_target_xcconfig = {
-        'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'ios_x64',
-        'KOTLIN_TARGET[sdk=iphoneos*]' => 'ios_arm',
-        'KOTLIN_TARGET[sdk=macosx*]' => 'macos_x64'
-    }
-
-    spec.script_phases = [
-        {
-            :name => 'Build common',
-            :execution_position => :before_compile,
-            :shell_path => '/bin/sh',
-            :script => <<-SCRIPT
-                set -ev
-                REPO_ROOT="$PODS_TARGET_SRCROOT"
-                "$REPO_ROOT/../gradlew" -p "$REPO_ROOT" :shared:packForXcode \
-                    -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET \
-                    -Pkotlin.native.cocoapods.configuration=$CONFIGURATION \
-                    -Pkotlin.native.cocoapods.cflags="$OTHER_CFLAGS" \
-                    -Pkotlin.native.cocoapods.paths.headers="$HEADER_SEARCH_PATHS" \
-                    -Pkotlin.native.cocoapods.paths.frameworks="$FRAMEWORK_SEARCH_PATHS"
-            SCRIPT
-        }
-    ]
+    spec.prepare_command = <<-SCRIPT
+        set -ev
+        cd ../
+        ./gradlew shared:packForXcode
+        cd shared
+    SCRIPT
 end
