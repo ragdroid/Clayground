@@ -14,8 +14,8 @@
 		3D2A261E2607BC62008F7E26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A261C2607BC62008F7E26 /* Main.storyboard */; };
 		3D2A262A2607BC62008F7E26 /* clayground_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A26292607BC62008F7E26 /* clayground_macTests.swift */; };
 		3D2A26352607BC62008F7E26 /* clayground_macUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A26342607BC62008F7E26 /* clayground_macUITests.swift */; };
-		3D2A264A2607BC8E008F7E26 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2A26452607BC8B008F7E26 /* shared.xcframework */; };
-		3D2A264B2607BC8F008F7E26 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2A26452607BC8B008F7E26 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D2A26632607C556008F7E26 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2A26612607C552008F7E26 /* shared.xcframework */; };
+		3D2A26642607C556008F7E26 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2A26612607C552008F7E26 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3D2A264B2607BC8F008F7E26 /* shared.xcframework in Embed Frameworks */,
+				3D2A26642607C556008F7E26 /* shared.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +64,7 @@
 		3D2A26302607BC62008F7E26 /* clayground-macUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-macUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A26342607BC62008F7E26 /* clayground_macUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_macUITests.swift; sourceTree = "<group>"; };
 		3D2A26362607BC62008F7E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D2A26452607BC8B008F7E26 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../../../shared/swiftpackage/shared.xcframework; sourceTree = "<group>"; };
+		3D2A26612607C552008F7E26 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../../../shared/swiftpackage/shared.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2A264A2607BC8E008F7E26 /* shared.xcframework in Frameworks */,
+				3D2A26632607C556008F7E26 /* shared.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 		3D2A26122607BC60008F7E26 /* clayground-mac */ = {
 			isa = PBXGroup;
 			children = (
-				3D2A26452607BC8B008F7E26 /* shared.xcframework */,
+				3D2A26612607C552008F7E26 /* shared.xcframework */,
 				3D2A26132607BC60008F7E26 /* AppDelegate.swift */,
 				3D2A26152607BC60008F7E26 /* ContentView.swift */,
 				3D2A26172607BC61008F7E26 /* Assets.xcassets */,

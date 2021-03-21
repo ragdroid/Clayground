@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:clayground-shared">
+   </FileRef>
+   <FileRef
       location = "group:clayground-mac/clayground-mac.xcodeproj">
    </FileRef>
    <FileRef

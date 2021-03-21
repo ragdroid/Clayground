@@ -5,7 +5,7 @@ let package = Package(
     name: "shared",
     platforms: [
         .iOS(.v13),
-.macOS(.v10)
+        .macOS(.v10)
     ],
     products: [
         .library(
