@@ -72,17 +72,25 @@ object Compose {
 
 object Coroutines {
     object Versions {
-        const val core = "1.4.3"
+        const val core = "1.4.3-native-mt"
     }
     const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.core}"
+}
+object Stately {
+    object Versions {
+    const val stately = "1.1.1"
+    }
+    const val common = "co.touchlab:stately-common:${Versions.stately}"
 }
 
 object Other {
     object Versions {
         const val timber = "4.1.2"
+        const val kermit = "0.1.8"
     }
     const val buildkonfig = "0.7.0"
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+    const val kermit = "co.touchlab:kermit:${Versions.kermit}"
 }
 
 object Testing {
