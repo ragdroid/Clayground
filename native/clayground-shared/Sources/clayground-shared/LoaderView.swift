@@ -7,9 +7,8 @@
 
 #if !os(macOS)
 import UIKit
-#else
-import SwiftUI
 #endif
+import SwiftUI
 
 #if !os(macOS)
 struct UIKitLoaderView: UIViewRepresentable {

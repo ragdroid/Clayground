@@ -9,7 +9,7 @@ import SwiftUI
 import clayground_shared
 
 @main
-struct clayground_iosApp: App {
+struct ClaygroundApp: App {
 	var body: some Scene {
 		WindowGroup {
 			RootView()

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3DDE72872607E4A3000AA288 /* clayground-shared in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDE72862607E4A3000AA288 /* clayground-shared */; };
-		3DF66F2E2607BBE50043A9A5 /* clayground_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */; };
 		3DF66F322607BBE60043A9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F312607BBE60043A9A5 /* Assets.xcassets */; };
 		3DF66F352607BBE60043A9A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */; };
 		3DF66F402607BBE60043A9A5 /* clayground_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F3F2607BBE60043A9A5 /* clayground_iosTests.swift */; };
 		3DF66F4B2607BBE60043A9A5 /* clayground_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F4A2607BBE60043A9A5 /* clayground_iosUITests.swift */; };
+		9F9E1E78260A83C30004629A /* ClaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E1E77260A83C30004629A /* ClaygroundApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 /* Begin PBXFileReference section */
 		3D4C4A9C2607E37600B48C79 /* clayground-shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "clayground-shared"; path = "../clayground-shared"; sourceTree = "<group>"; };
 		3DF66F2A2607BBE50043A9A5 /* clayground-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_iosApp.swift; sourceTree = "<group>"; };
 		3DF66F312607BBE60043A9A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DF66F362607BBE60043A9A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +57,8 @@
 		3DF66F462607BBE60043A9A5 /* clayground-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clayground-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF66F4A2607BBE60043A9A5 /* clayground_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clayground_iosUITests.swift; sourceTree = "<group>"; };
 		3DF66F4C2607BBE60043A9A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F9E1E77260A83C30004629A /* ClaygroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaygroundApp.swift; sourceTree = "<group>"; };
+		9F9E1E7F260A85E40004629A /* clayground-ios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "clayground-ios-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +119,8 @@
 		3DF66F2C2607BBE50043A9A5 /* clayground-ios */ = {
 			isa = PBXGroup;
 			children = (
-				3DF66F2D2607BBE50043A9A5 /* clayground_iosApp.swift */,
+				9F9E1E7F260A85E40004629A /* clayground-ios-Bridging-Header.h */,
+				9F9E1E77260A83C30004629A /* ClaygroundApp.swift */,
 				3DF66F312607BBE60043A9A5 /* Assets.xcassets */,
 				3DF66F362607BBE60043A9A5 /* Info.plist */,
 				3DF66F332607BBE60043A9A5 /* Preview Content */,
@@ -223,6 +225,7 @@
 				TargetAttributes = {
 					3DF66F292607BBE50043A9A5 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1230;
 					};
 					3DF66F3A2607BBE60043A9A5 = {
 						CreatedOnToolsVersion = 12.2;
@@ -285,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF66F2E2607BBE50043A9A5 /* clayground_iosApp.swift in Sources */,
+				9F9E1E78260A83C30004629A /* ClaygroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"clayground-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = G436LJ5F52;
@@ -454,6 +458,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "clayground-ios/clayground-ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"clayground-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = G436LJ5F52;
@@ -476,6 +483,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ritesh.clayground.clayground-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "clayground-ios/clayground-ios-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

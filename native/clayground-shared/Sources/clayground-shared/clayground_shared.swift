@@ -13,10 +13,26 @@ class AppModule: Assembly {
 final class AppModel {
 	static let shared = AppModel()
 	let appComponent: Resolver = Assembler([AppModule()]).resolver
-
+    
+    private func inject<Dependency>(_ serviceType: Dependency.Type) throws -> Dependency {
+        let service = appComponent.resolve(serviceType)
+        guard service != nil else {
+            throw AppErrors.InjectionError(name: "You must add a provider for \(serviceType)")
+        }
+        return service!
+    }
+    
+    static func inject<Service>(_ serviceType: Service.Type) -> Service {
+        try! AppModel.shared.inject(serviceType)
+    }
+    
 	init() {
 		SharedModule().configure()
 	}
+}
+
+enum AppErrors: Error {
+    case InjectionError(name: String)
 }
 
 public final class MovieDetailViewState: ObservableObject {
@@ -27,7 +43,7 @@ public final class MovieDetailViewState: ObservableObject {
 
 	private lazy var viewModel = NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>(viewModel: kmpViewModel, render: handleRender, viewEffectHandler: handleViewEffect)
 
-	private lazy var kmpViewModel = AppModel.shared.appComponent.resolve(MovieDetailViewModel.self)!
+    private lazy var kmpViewModel = AppModel.inject(MovieDetailViewModel.self)
 
 	private func handleRender(_ state: MovieDetailState?) {
 		isLoading = state?.loadingState == LoadingState.Loading()
@@ -89,4 +105,10 @@ public struct RootView: View {
 	public var body: some View {
 		MovieDetailView(state: .init())
 	}
+}
+
+struct MovieDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("Testing")
+    }
 }
