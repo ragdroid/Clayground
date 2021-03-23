@@ -7,21 +7,18 @@
 
 import Cocoa
 import SwiftUI
-import Swinject
-import shared
+import clayground_shared
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	var window: NSWindow!
-	static var appComponent: Resolver!
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		SharedModule().configure()
-		AppDelegate.appComponent = Assembler([AppModule()]).resolver
 
 		// Create the SwiftUI view that provides the window contents.
-		let contentView = MovieDetailView(state: .init())
+		let contentView = RootView()
+			.frame(maxWidth: .infinity, maxHeight: .infinity)
 
 		// Create the window and set the content view.
 		window = NSWindow(
@@ -37,13 +34,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
-	}
-}
-
-class AppModule: Assembly {
-	func assemble(container: Container) {
-		container.register(MovieDetailViewModel.self) { _ in
-			SharedModule.Companion().movieDetailViewModel
-		}
 	}
 }
