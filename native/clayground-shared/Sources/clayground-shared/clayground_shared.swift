@@ -3,38 +3,38 @@ import SwiftUI
 import Swinject
 
 final class AppAssembler {
-	private static let resolver = Assembler(Dependency.allCases).resolver
+	private static let assembler = Assembler()
 
-	static func resolve<S>() throws -> S {
-		guard let value = resolver.resolve(S.self) else {
-			throw AppErrors.InjectionError(name: "You must add a provider for \(S.self)")
+	static func resolve<S: Injectable>(_ type: S.Type) throws -> S {
+		guard let value = assembler.resolver.resolve(S.self) else {
+			assembler.apply(assembly: S.assembly())
+			guard let value = try? resolve(S.self) else {
+				throw AppErrors.InjectionError(name: "Unable to resolve \(S.self)")
+			}
+			return value
 		}
 		return value
 	}
 }
 
-enum Dependency: Assembly, CaseIterable {
-	case movieDetail
-	case movieState
+enum Dependency {
+	case movieDetail(MovieDetailViewModel.Type)
+	case movieState(MovieDetailViewState.Type)
 }
 
-extension Dependency {
+extension Dependency: Assembly {
 	func assemble(container: Container) {
 		switch self {
-			case .movieDetail:
-				container.register(MovieDetailViewModel.self) { _ in
-					SharedModule.Companion().movieDetailViewModel
+			case .movieDetail(let type):
+				container.register(type) { r in
+					type.instance(resolver: r)
 				}
-			case .movieState:
-				container.register(MovieDetailViewState.self) { _ in
-					MovieDetailViewState()
+			case .movieState(let type):
+				container.register(type) { r in
+					type.instance(resolver: r)
 				}
 		}
 	}
-}
-
-@propertyWrapper struct Inject<S> {
-	let wrappedValue: S = try! AppAssembler.resolve()
 }
 
 enum AppErrors: Error {
@@ -125,4 +125,31 @@ struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Text("Testing")
     }
+}
+
+protocol Injectable {
+	static func instance(resolver: Resolver) -> Self
+	static func assembly() -> Assembly
+}
+
+@propertyWrapper struct Inject<S: Injectable> {
+	let wrappedValue = try! AppAssembler.resolve(S.self)
+}
+
+extension MovieDetailViewModel: Injectable {
+	static func instance(resolver: Resolver) -> Self {
+		SharedModule.Companion().movieDetailViewModel as! Self
+	}
+	static func assembly() -> Assembly {
+		Dependency.movieDetail(MovieDetailViewModel.self)
+	}
+}
+
+extension MovieDetailViewState: Injectable {
+	static func instance(resolver: Resolver) -> Self {
+		MovieDetailViewState() as! Self
+	}
+	static func assembly() -> Assembly {
+		Dependency.movieState(MovieDetailViewState.self)
+	}
 }
