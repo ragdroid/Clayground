@@ -2,33 +2,39 @@ import shared
 import SwiftUI
 import Swinject
 
-class AppModule: Assembly {
+final class AppAssembler {
+	private static let resolver = Assembler(Dependency.allCases).resolver
+
+	static func resolve<S>() throws -> S {
+		guard let value = resolver.resolve(S.self) else {
+			throw AppErrors.InjectionError(name: "You must add a provider for \(S.self)")
+		}
+		return value
+	}
+}
+
+enum Dependency: Assembly, CaseIterable {
+	case movieDetail
+	case movieState
+}
+
+extension Dependency {
 	func assemble(container: Container) {
-		container.register(MovieDetailViewModel.self) { _ in
-			SharedModule.Companion().movieDetailViewModel
+		switch self {
+			case .movieDetail:
+				container.register(MovieDetailViewModel.self) { _ in
+					SharedModule.Companion().movieDetailViewModel
+				}
+			case .movieState:
+				container.register(MovieDetailViewState.self) { _ in
+					MovieDetailViewState()
+				}
 		}
 	}
 }
 
-final class AppModel {
-	static let shared = AppModel()
-	let appComponent: Resolver = Assembler([AppModule()]).resolver
-    
-    private func inject<Dependency>(_ serviceType: Dependency.Type) throws -> Dependency {
-        let service = appComponent.resolve(serviceType)
-        guard service != nil else {
-            throw AppErrors.InjectionError(name: "You must add a provider for \(serviceType)")
-        }
-        return service!
-    }
-    
-    static func inject<Service>(_ serviceType: Service.Type) -> Service {
-        try! AppModel.shared.inject(serviceType)
-    }
-    
-	init() {
-		SharedModule().configure()
-	}
+@propertyWrapper struct Inject<S> {
+	let wrappedValue: S = try! AppAssembler.resolve()
 }
 
 enum AppErrors: Error {
@@ -38,12 +44,11 @@ enum AppErrors: Error {
 public final class MovieDetailViewState: ObservableObject {
 	@Published public var name: String = "Initial movie name"
 	@Published public var isLoading: Bool = true
+	@Inject private var kmpViewModel: MovieDetailViewModel
 
 	public init() {}
 
-	private lazy var viewModel = NativeViewModel<MovieDetailState, MovieDetailEvent, MovieDetailViewEffect>(viewModel: kmpViewModel, render: handleRender, viewEffectHandler: handleViewEffect)
-
-    private lazy var kmpViewModel = AppModel.inject(MovieDetailViewModel.self)
+	private lazy var viewModel = NativeViewModel(viewModel: kmpViewModel, render: handleRender, viewEffectHandler: handleViewEffect)
 
 	private func handleRender(_ state: MovieDetailState?) {
 		isLoading = state?.loadingState == LoadingState.Loading()
@@ -99,11 +104,20 @@ extension View {
 	}
 }
 
+struct RootViewModel {
+	init() {
+		SharedModule().configure()
+	}
+}
+
 public struct RootView: View {
+	private let viewModel = RootViewModel()
+	@Inject private var movieDetailViewState: MovieDetailViewState
+
 	public init() {}
 
 	public var body: some View {
-		MovieDetailView(state: .init())
+		MovieDetailView(state: movieDetailViewState)
 	}
 }
 
