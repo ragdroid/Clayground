@@ -15,6 +15,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.ragdroid.clayground.shared.ui.moviedetail.LoadingState
@@ -30,6 +33,7 @@ import timber.log.Timber
 @FlowPreview
 @AndroidEntryPoint
 class MovieDetailActivity: AppCompatActivity() {
+
     private val viewModel: MovieDetailAndroidViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,32 +41,45 @@ class MovieDetailActivity: AppCompatActivity() {
         setContent {
             val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
-                val state = viewModel.stateFlow.collectAsState(MovieDetailState()).value
-                Loader(loadingState = state.loadingState)
-                Column {
-                    MovieTitle(state.movieDetails?.title)
-                }
+                MovieDetail()
             }
         }
     }
+
+    @Composable
+    fun MovieDetail() {
+        val state:MovieDetailState by viewModel.stateFlow.collectAsState(initial = MovieDetailState())
+        Timber.d("recomposed MovieDetail state: %s", state)
+        Loader(loadingState = state.loadingState)
+        MovieTitle(state.movieDetails?.title)
+    }
+
     @Composable
     fun Loader(loadingState: LoadingState) {
-        Timber.d("recomposed loader")
+        Timber.d("recomposed Loader loadingState: %s", loadingState)
         if (loadingState == LoadingState.Loading) {
-            Box(Modifier.fillMaxHeight().fillMaxWidth().wrapContentSize(Alignment.Center)) {
+            Box(
+                Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)) {
                 CircularProgressIndicator()
             }
         }
     }
     @Composable
     fun MovieTitle(title: String?) {
-        Timber.d("recomposed movieTitle")
-        title?.let {
-            Text(
-                text = title,
-                modifier = Modifier.fillMaxWidth().wrapContentSize(Alignment.Center),
-                color = MaterialTheme.colors.onBackground
-            )
+        Timber.d("recomposed MovieTitle title: %s", title)
+        Column {
+            title?.let {
+                Text(
+                    text = title,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .wrapContentSize(Alignment.Center),
+                    color = MaterialTheme.colors.onBackground
+                )
+            }
         }
     }
 }
