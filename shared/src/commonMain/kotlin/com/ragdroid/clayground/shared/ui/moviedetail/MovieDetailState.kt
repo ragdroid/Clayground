@@ -8,7 +8,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
@@ -26,6 +25,10 @@ class MovieDetailUpdate() {
                     state.copy(loadingState = LoadingState.Loading),
                     MovieDetailSideEffect.LoadMovieDetails(MovieId(464052))
                 )
+            }
+            is MovieDetailEvent.Reload -> {
+//                Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(460465)))
+                Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(464052)))
             }
             is MovieDetailEvent.LoadSuccess -> Next.next(state.copy(
                 loadingState = LoadingState.Idle,
@@ -45,6 +48,7 @@ sealed class LoadingState {
 
 sealed class MovieDetailEvent {
     object Load: MovieDetailEvent()
+    object Reload: MovieDetailEvent()
 
     //Result events
     data class LoadSuccess(val movieDetails: MovieDetail): MovieDetailEvent()

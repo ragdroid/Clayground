@@ -50,9 +50,9 @@ kotlin {
                 implementation(Ktor.logging)
                 implementation(Ktor.serialization)
                 implementation(Serialization.kotlinx)
-                implementation(Coroutines.core){
+                implementation(Coroutines.coreNative){
                     version {
-                        strictly(Coroutines.Versions.core)
+                        strictly(Coroutines.Versions.coreNative)
                     }
                 }
                 implementation(Stately.common)

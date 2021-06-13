@@ -7,22 +7,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.Button
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.ragdroid.clayground.shared.ui.moviedetail.LoadingState
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailEvent
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailState
 import com.ragdroid.clayground.theme.MovieTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -41,17 +38,55 @@ class MovieDetailActivity: AppCompatActivity() {
         setContent {
             val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
-                MovieDetail()
+                Column {
+                    MovieDetail()
+                    RefreshButton()
+//                    ShowLoaderButton()
+//                    HideLoaderButton()
+                }
             }
         }
     }
+    @Composable
+    fun RefreshButton() {
+        Timber.d("recomposed RefreshButton")
+        Button(onClick = {
+            viewModel.dispatch(MovieDetailEvent.Reload)
+        }) {
+            Text(text = "Reload")
+        }
+    }
+//    @Composable
+//    fun ShowLoaderButton() {
+//        Timber.d("recomposed ShowLoaderButton")
+//        Button(onClick = {
+//            viewModel.dispatch(MovieDetailEvent.Reload)
+//        }) {
+//            Text(text = "Show Loader")
+//        }
+//    }
+
+//    @Composable
+//    fun HideLoaderButton() {
+//        Timber.d("recomposed HideLoaderButton")
+//        Button(onClick = {
+//            viewModel.dispatch(MovieDetailEvent.Reload)
+//        }) {
+//            Text(text = "Hide Loader")
+//        }
+//    }
+
 
     @Composable
     fun MovieDetail() {
-        val state:MovieDetailState by viewModel.stateFlow.collectAsState(initial = MovieDetailState())
+        val mapState = viewModel.mapState()
+        val state: MovieUIState by mapState.collectAsState(initial = MovieUIState())
+
         Timber.d("recomposed MovieDetail state: %s", state)
-        Loader(loadingState = state.loadingState)
-        MovieTitle(state.movieDetails?.title)
+        Column {
+            Loader(loadingState = state.loadingState)
+            MovieTitle(state.movieDetails?.title)
+        }
     }
 
     @Composable
@@ -60,13 +95,13 @@ class MovieDetailActivity: AppCompatActivity() {
         if (loadingState == LoadingState.Loading) {
             Box(
                 Modifier
-                    .fillMaxHeight()
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.Center)) {
+                    .wrapContentSize(Alignment.Center)
+            ) {
                 CircularProgressIndicator()
             }
         }
     }
+
     @Composable
     fun MovieTitle(title: String?) {
         Timber.d("recomposed MovieTitle title: %s", title)
