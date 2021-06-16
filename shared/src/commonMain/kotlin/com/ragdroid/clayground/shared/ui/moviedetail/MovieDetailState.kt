@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
 
 data class MovieDetailState(
-    val loadingState: LoadingState = LoadingState.Idle,
+    val loadingState: LoadingState = LoadingState.IDLE,
     val movieDetails: MovieDetail? = null
 )
 
@@ -22,7 +22,7 @@ class MovieDetailUpdate() {
         when(event) {
             is MovieDetailEvent.Load -> {
                 Next.next(
-                    state.copy(loadingState = LoadingState.Loading),
+                    state.copy(loadingState = LoadingState.LOADING),
                     MovieDetailSideEffect.LoadMovieDetails(MovieId(464052))
                 )
             }
@@ -31,24 +31,32 @@ class MovieDetailUpdate() {
                 Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(464052)))
             }
             is MovieDetailEvent.LoadSuccess -> Next.next(state.copy(
-                loadingState = LoadingState.Idle,
+                loadingState = LoadingState.IDLE,
                 movieDetails = event.movieDetails
             ))
             is MovieDetailEvent.LoadFailed -> Next.next(
-                state.copy(loadingState = LoadingState.Idle)
+                state.copy(loadingState = LoadingState.IDLE)
+            )
+            is MovieDetailEvent.Upvote -> Next.next(
+                state.copy(movieDetails = state.movieDetails?.copy(voteCount = state.movieDetails.voteCount + 1))
+            )
+            is MovieDetailEvent.Downvote -> Next.next(
+                state.copy(movieDetails = state.movieDetails?.copy(voteCount = state.movieDetails.voteCount - 1))
             )
             else -> Next.noChange()
         }
 }
 
-sealed class LoadingState {
-    object Loading: LoadingState()
-    object Idle: LoadingState()
+enum class LoadingState {
+    LOADING, IDLE
 }
 
 sealed class MovieDetailEvent {
     object Load: MovieDetailEvent()
     object Reload: MovieDetailEvent()
+
+    object Upvote: MovieDetailEvent()
+    object Downvote: MovieDetailEvent()
 
     //Result events
     data class LoadSuccess(val movieDetails: MovieDetail): MovieDetailEvent()
@@ -68,7 +76,7 @@ class MovieDetailSideEffectHandler(
         when (sideEffect) {
             is MovieDetailSideEffect.LoadMovieDetails -> flow<MovieDetailEvent> {
                 val movieDetail = movieDetailRepository.movieDetails(sideEffect.id.id)
-                emit(MovieDetailEvent.LoadSuccess(movieDetail))
+                emit(MovieDetailEvent.LoadSuccess(movieDetail.copy(voteCount = movieDetail.voteCount + 1)))
             }
                 .onStart { delay(3000) }
                 .catch {
