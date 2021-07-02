@@ -62,7 +62,7 @@ object Compose {
         const val compose = "1.0.0-beta08" // must change accompanist version together
         const val activity = "1.3.0-beta01"
         const val navigation = "2.4.0-alpha03"
-        const val accompanist = "0.12.0"
+        const val accompanist = "0.11.0"
     }
     const val activity = "androidx.activity:activity-compose:${Versions.activity}"
     const val ui = "androidx.compose.ui:ui:${Versions.compose}"
@@ -74,13 +74,7 @@ object Compose {
 
     //accompanist
     const val coil = "com.google.accompanist:accompanist-coil:${Versions.accompanist}"
-}
-
-object Accompanist {
-    object Versions {
-
-    }
-
+    const val glide = "com.google.accompanist:accompanist-glide:${Versions.accompanist}"
 }
 
 object Coroutines {

@@ -4,8 +4,11 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
@@ -15,7 +18,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.google.accompanist.glide.rememberGlidePainter
 import com.ragdroid.clayground.shared.ui.moviedetail.LoadingState
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailEvent
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailState
@@ -24,6 +32,8 @@ import com.ragdroid.clayground.util.LogCompositions
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import com.ragdroid.clayground.R
+import com.ragdroid.clayground.shared.domain.models.MovieDetail
 
 @ExperimentalCoroutinesApi
 @FlowPreview
@@ -35,9 +45,11 @@ class MovieDetailActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewModel.dispatch(MovieDetailEvent.Load)
         setContent {
-            val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
+            val scrollState = rememberScrollState()
+            val themeColors = MovieTheme.darkColors
+//            val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
-                Column(Modifier.padding(16.dp)) {
+                Column(Modifier.verticalScroll(scrollState)) {
                     MovieDetail()
                     RefreshButton()
                     UpvoteButton()
@@ -82,18 +94,40 @@ class MovieDetailActivity: AppCompatActivity() {
         val state: MovieDetailState by viewModel.stateFlow.collectAsState(initial = MovieDetailState())
 
         LogCompositions("MovieDetailActivity","recomposed MovieDetail state: $state")
-        Column {
+        Box(contentAlignment = Alignment.BottomStart) {
             Loader(loadingState = state.loadingState)
             val movieDetails = state.movieDetails
             movieDetails?.let { movieDetail ->
-                MovieTitle(title = movieDetail.title)
-                MovieOverview(overview = movieDetail.overview)
-                MovieVotes(voteCount = movieDetail.voteCount)
-                MovieLength(length = movieDetail.runtime)
-                MovieReleaseDate(releaseDate = movieDetail.releaseDate)
+                //TODO?
+                MovieBackdrop(movieDetail.backdropPath)
+                Column(
+                    Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.Bottom
+                ) {
+                    MovieTitle(title = movieDetail.title)
+                    MovieOverview(overview = movieDetail.overview)
+                    MovieVotes(voteCount = movieDetail.voteCount)
+                    MovieLength(length = movieDetail.runtime)
+                    MovieReleaseDate(releaseDate = movieDetail.releaseDate)
+                }
             }
-
         }
+    }
+
+    @Composable
+    private fun MovieBackdrop(backdropPath: String?) {
+        LogCompositions("MovieDetailActivity","recomposed MovieBackdrop: $backdropPath")
+        Image(
+            painter = rememberGlidePainter(
+                request = backdropPath
+            ),
+            contentDescription = stringResource(id = R.string.movie_backdrop_image),
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .height(500.dp)
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.TopCenter),
+        )
     }
 
     @Composable
@@ -102,7 +136,7 @@ class MovieDetailActivity: AppCompatActivity() {
         if (loadingState == LoadingState.LOADING) {
             Box(
                 Modifier
-                    .wrapContentSize(Alignment.CenterStart)
+                    .wrapContentSize(Alignment.Center)
             ) {
                 CircularProgressIndicator()
             }
@@ -112,74 +146,66 @@ class MovieDetailActivity: AppCompatActivity() {
     @Composable
     fun MovieTitle(title: String?) {
         LogCompositions("MovieDetailActivity","recomposed MovieTitle title: $title")
-        Column {
-            title?.let {
-                Text(
-                    text = title,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .wrapContentSize(Alignment.CenterStart),
-                    color = MaterialTheme.colors.onBackground
-                )
-            }
+        title?.let {
+            Text(
+                text = title,
+                fontSize = 36.sp,
+                fontWeight = FontWeight.ExtraBold,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.CenterStart),
+                color = MaterialTheme.colors.onBackground
+            )
         }
     }
 
     @Composable
     fun MovieOverview(overview: String) {
         LogCompositions("MovieDetailActivity","recomposed MovieOverview overview: $overview")
-        Column {
-            Text(
-                text = overview,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.CenterStart),
-                color = MaterialTheme.colors.onBackground
-            )
-        }
+        Text(
+            text = overview,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.CenterStart),
+            color = MaterialTheme.colors.onBackground
+        )
     }
 
     @Composable
     fun MovieVotes(voteCount: Int) {
         LogCompositions("MovieDetailActivity","recomposed MovieVotes voteCount: $voteCount")
-        Column {
-            Text(
-                text = voteCount.toString(),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.CenterStart),
-                color = MaterialTheme.colors.onBackground
-            )
-        }
+        Text(
+            text = voteCount.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.CenterStart),
+            color = MaterialTheme.colors.onBackground
+        )
     }
 
     @Composable
     fun MovieLength(length: Int) {
         LogCompositions("MovieDetailActivity","recomposed MovieLenght length: $length")
-        Column {
-            Text(
-                text = length.toString(),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.CenterStart),
-                color = MaterialTheme.colors.onBackground
-            )
-        }
+        Text(
+            text = length.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.CenterStart),
+            color = MaterialTheme.colors.onBackground
+        )
     }
 
     @Composable
     fun MovieReleaseDate(releaseDate: String?) {
         LogCompositions("MovieDetailActivity","recomposed MovieReleaseDate releaseDate: $releaseDate")
         releaseDate?.let {
-            Column {
-                Text(
-                    text = releaseDate,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .wrapContentSize(Alignment.CenterStart),
-                    color = MaterialTheme.colors.onBackground
-                )
-            }
+            Text(
+                text = releaseDate,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.CenterStart),
+                color = MaterialTheme.colors.onBackground
+            )
         }
     }
 }

@@ -27,8 +27,8 @@ class MovieDetailUpdate() {
                 )
             }
             is MovieDetailEvent.Reload -> {
-//                Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(460465)))
-                Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(464052)))
+                Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(460465)))
+//                Next.dispatch(MovieDetailSideEffect.LoadMovieDetails(MovieId(464052)))
             }
             is MovieDetailEvent.LoadSuccess -> Next.next(state.copy(
                 loadingState = LoadingState.IDLE,
