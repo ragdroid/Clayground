@@ -29,7 +29,7 @@ object Serialization {
 
 object Ktor {
     object Versions {
-        const val ktor = "1.5.2"
+        const val ktor = "1.6.1"
     }
     const val core = "io.ktor:ktor-client-core:${Versions.ktor}"
     const val json = "io.ktor:ktor-client-json:${Versions.ktor}"
