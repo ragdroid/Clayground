@@ -5,15 +5,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -33,7 +30,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import com.ragdroid.clayground.R
-import com.ragdroid.clayground.shared.domain.models.MovieDetail
+import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewEffect
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 
 @ExperimentalCoroutinesApi
 @FlowPreview
@@ -45,19 +44,44 @@ class MovieDetailActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewModel.dispatch(MovieDetailEvent.Load)
         setContent {
-            val scrollState = rememberScrollState()
             val themeColors = MovieTheme.darkColors
 //            val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
+                MovieDetailScreen()
+            }
+        }
+    }
+
+    @Composable
+    fun MovieDetailScreen() {
+        val scrollState = rememberScrollState()
+        val scaffoldState = rememberScaffoldState()
+        Scaffold(
+            scaffoldState = scaffoldState,
+            content = {
                 Column(Modifier.verticalScroll(scrollState)) {
                     MovieDetail()
+                    HandleViewEffects(scaffoldState)
                     RefreshButton()
                     UpvoteButton()
                     DownvoteButton()
                 }
             }
+        )
+    }
+
+    @Composable
+    fun HandleViewEffects(scaffoldState: ScaffoldState) {
+        val defaultErrorMessage = stringResource(id = R.string.error_movie_details)
+        LaunchedEffect("launch error message") {
+            viewModel.uiEffectsFlow.onEach {
+                when (it) {
+                    is MovieDetailViewEffect.ShowError -> scaffoldState.snackbarHostState.showSnackbar(it.throwable.message ?: defaultErrorMessage)
+                }
+            }.collect()
         }
     }
+
     @Composable
     fun RefreshButton() {
         LogCompositions("MovieDetailActivity","recomposed RefreshButton")

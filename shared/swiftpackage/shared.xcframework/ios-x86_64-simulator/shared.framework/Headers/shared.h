@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedGenericNativeViewModel<State, Event, ViewEffect>, SharedApiToken, SharedBaseUrl, SharedMovieDetailResponse, SharedKtor_client_coreHttpClient, SharedMovieMetaInfo, SharedMovieDetail, SharedMovieId, SharedKotlinUnit, SharedKermitKermit, SharedNext<S, F>, SharedKotlinArray<T>, SharedKotlinx_coroutines_coreConflatedBroadcastChannel<E>, SharedKotlinEnum<E>, SharedLoadingState, SharedMovieDetailEvent, SharedKotlinThrowable, SharedMovieDetailEventLoadFailed, SharedMovieDetailEventLoadSuccess, SharedMovieDetailState, SharedMovieDetailSideEffect, SharedMovieDetailSideEffectLoadMovieDetails, SharedMovieDetailRepository, SharedMovieDetailViewEffect, SharedMovieDetailViewEffectShowError, SharedGenericViewModel<State, Event, SideEffect, ViewEffect>, SharedKoin_coreKoin, SharedKotlinx_serialization_jsonJson, SharedKoin_coreModule, SharedMovieDetailViewModel, SharedKermitLogger, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpClientConfig<T>, SharedKtor_client_coreHttpRequestBuilder, SharedKtor_client_coreHttpClientCall, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKermitSeverity, SharedKotlinCancellationException, SharedKoin_coreScope, SharedKoin_coreParametersHolder, SharedKotlinLazyThreadSafetyMode, SharedKoin_coreLogger, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_jsonJsonConfiguration, SharedKotlinx_serialization_jsonJsonElement, SharedKoin_coreInstanceFactory<T>, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreScopeDSL, SharedKoin_coreSingleInstanceFactory<T>, SharedKotlinAbstractCoroutineContextElement, SharedKtor_client_coreHttpRequestData, SharedKtor_client_coreHttpResponseData, SharedKtor_client_coreProxyConfig, SharedKotlinNothing, SharedKtor_httpHeadersBuilder, SharedKtor_httpURLBuilder, SharedKtor_httpHttpMethod, SharedKtor_client_coreTypeInfo, SharedKtor_client_coreHttpResponse, SharedKtor_utilsAttributeKey<T>, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline<TSubject, TContext>, SharedKtor_client_coreHttpResponseContainer, SharedKotlinx_serialization_coreSerialKind, SharedKoin_coreLevel, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKtor_httpUrl, SharedKtor_httpOutgoingContent, SharedKtor_httpHttpStatusCode, SharedKtor_utilsGMTDate, SharedKtor_httpHttpProtocolVersion, SharedKtor_utilsStringValuesBuilder, SharedKtor_httpURLProtocol, SharedKtor_httpParametersBuilder, SharedKtor_ioMemory, SharedKtor_ioIoBuffer, SharedKotlinByteArray, SharedKtor_ioByteReadPacket, SharedKtor_ioByteOrder, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKtor_httpContentType, SharedKtor_utilsWeekDay, SharedKtor_utilsMonth, SharedKtor_httpUrlEncodingOption, SharedKtor_ioBuffer, SharedKtor_ioChunkBuffer, SharedKotlinCharArray, SharedKotlinByteIterator, SharedKtor_ioAbstractInput, SharedKtor_ioByteReadPacketBase, SharedKtor_ioByteReadPacketPlatformBase, SharedKotlinKTypeProjection, SharedKotlinx_coroutines_coreAtomicOp<__contravariant T>, SharedKotlinx_coroutines_coreOpDescriptor, SharedKotlinx_coroutines_coreLockFreeLinkedListNode, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SharedKtor_httpHeaderValueParam, SharedKtor_httpHeaderValueWithParameters, SharedKotlinCharIterator, SharedKotlinKVariance, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
+@class SharedGenericNativeViewModel<State, Event, ViewEffect>, SharedApiToken, SharedBaseUrl, SharedMovieDetailResponse, SharedKtor_client_coreHttpClient, SharedMovieMetaInfo, SharedMovieDetail, SharedMovieId, SharedKotlinUnit, SharedKermitKermit, SharedNext<S, F>, SharedKotlinArray<T>, SharedKotlinEnum<E>, SharedLoadingState, SharedMovieDetailEvent, SharedKotlinThrowable, SharedMovieDetailEventLoadFailed, SharedMovieDetailEventLoadSuccess, SharedMovieDetailState, SharedMovieDetailSideEffect, SharedMovieDetailSideEffectLoadMovieDetails, SharedMovieDetailRepository, SharedMovieDetailViewEffect, SharedMovieDetailViewEffectShowError, SharedGenericViewModel<State, Event, SideEffect, ViewEffect>, SharedKoin_coreKoin, SharedKotlinx_serialization_jsonJson, SharedKoin_coreModule, SharedMovieDetailViewModel, SharedKermitLogger, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpClientConfig<T>, SharedKtor_client_coreHttpRequestBuilder, SharedKtor_client_coreHttpClientCall, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKermitSeverity, SharedKotlinCancellationException, SharedKoin_coreScope, SharedKoin_coreParametersHolder, SharedKotlinLazyThreadSafetyMode, SharedKoin_coreLogger, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_jsonJsonConfiguration, SharedKotlinx_serialization_jsonJsonElement, SharedKoin_coreInstanceFactory<T>, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreScopeDSL, SharedKoin_coreSingleInstanceFactory<T>, SharedKotlinAbstractCoroutineContextElement, SharedKtor_client_coreHttpRequestData, SharedKtor_client_coreHttpResponseData, SharedKtor_client_coreProxyConfig, SharedKotlinNothing, SharedKtor_httpHeadersBuilder, SharedKtor_httpURLBuilder, SharedKtor_httpHttpMethod, SharedKtor_client_coreTypeInfo, SharedKtor_client_coreHttpResponse, SharedKtor_utilsAttributeKey<T>, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline<TSubject, TContext>, SharedKtor_client_coreHttpResponseContainer, SharedKotlinx_serialization_coreSerialKind, SharedKoin_coreLevel, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKtor_httpUrl, SharedKtor_httpOutgoingContent, SharedKtor_httpHttpStatusCode, SharedKtor_utilsGMTDate, SharedKtor_httpHttpProtocolVersion, SharedKtor_utilsStringValuesBuilder, SharedKtor_httpURLProtocol, SharedKtor_httpParametersBuilder, SharedKtor_ioMemory, SharedKtor_ioIoBuffer, SharedKotlinByteArray, SharedKtor_ioByteReadPacket, SharedKtor_ioByteOrder, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKtor_httpContentType, SharedKtor_utilsWeekDay, SharedKtor_utilsMonth, SharedKtor_httpUrlEncodingOption, SharedKtor_ioBuffer, SharedKtor_ioChunkBuffer, SharedKotlinCharArray, SharedKotlinByteIterator, SharedKtor_ioAbstractInput, SharedKtor_ioByteReadPacketBase, SharedKtor_ioByteReadPacketPlatformBase, SharedKotlinKTypeProjection, SharedKotlinx_coroutines_coreAtomicOp<__contravariant T>, SharedKotlinx_coroutines_coreOpDescriptor, SharedKotlinx_coroutines_coreLockFreeLinkedListNode, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SharedKtor_httpHeaderValueParam, SharedKtor_httpHeaderValueWithParameters, SharedKotlinCharIterator, SharedKotlinKVariance, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
 
-@protocol SharedMoviesService, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreFlow, SharedMviViewModel, SharedInit, SharedUpdate, SharedSideEffectHandler, SharedKotlinComparable, SharedKoin_coreKoinComponent, SharedKotlinCoroutineContext, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_client_coreHttpClientEngineCapability, SharedKtor_utilsAttributes, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinIterator, SharedKotlinx_coroutines_coreReceiveChannel, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreBroadcastChannel, SharedKoin_coreKoinScopeComponent, SharedKoin_coreQualifier, SharedKotlinKClass, SharedKotlinLazy, SharedKotlinx_serialization_coreSerialFormat, SharedKotlinx_serialization_coreStringFormat, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_client_coreHttpClientFeature, SharedKtor_httpHttpMessageBuilder, SharedKotlinx_coroutines_coreJob, SharedKtor_ioByteReadChannel, SharedKtor_utilsTypeInfo, SharedKtor_client_coreHttpRequest, SharedKotlinSuspendFunction2, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinSuspendFunction1, SharedKoin_coreScopeCallback, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKtor_httpHeaders, SharedKtor_utilsStringValues, SharedKotlinMapEntry, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKtor_ioReadSession, SharedKotlinAppendable, SharedKotlinKType, SharedKtor_httpHttpMessage, SharedKotlinFunction, SharedKtor_httpParameters, SharedKotlinx_coroutines_coreParentJob, SharedKotlinSuspendFunction0, SharedKtor_ioObjectPool, SharedKtor_ioInput, SharedKtor_ioOutput;
+@protocol SharedMoviesService, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreFlow, SharedMviViewModel, SharedInit, SharedUpdate, SharedSideEffectHandler, SharedKotlinx_coroutines_coreChannel, SharedKotlinComparable, SharedKoin_coreKoinComponent, SharedKotlinCoroutineContext, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_client_coreHttpClientEngineCapability, SharedKtor_utilsAttributes, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinIterator, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreReceiveChannel, SharedKoin_coreKoinScopeComponent, SharedKoin_coreQualifier, SharedKotlinKClass, SharedKotlinLazy, SharedKotlinx_serialization_coreSerialFormat, SharedKotlinx_serialization_coreStringFormat, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_client_coreHttpClientFeature, SharedKtor_httpHttpMessageBuilder, SharedKotlinx_coroutines_coreJob, SharedKtor_ioByteReadChannel, SharedKtor_utilsTypeInfo, SharedKtor_client_coreHttpRequest, SharedKotlinSuspendFunction2, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinSuspendFunction1, SharedKoin_coreScopeCallback, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKtor_httpHeaders, SharedKtor_utilsStringValues, SharedKotlinMapEntry, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKtor_ioReadSession, SharedKotlinAppendable, SharedKotlinKType, SharedKtor_httpHttpMessage, SharedKotlinFunction, SharedKtor_httpParameters, SharedKotlinx_coroutines_coreParentJob, SharedKotlinSuspendFunction0, SharedKtor_ioObjectPool, SharedKtor_ioInput, SharedKtor_ioOutput;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -399,7 +399,7 @@ __attribute__((swift_name("NextCompanion")))
 __attribute__((swift_name("SideEffectHandler")))
 @protocol SharedSideEffectHandler
 @required
-- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(id _Nullable)sideEffect viewEffectConsumer:(SharedKotlinx_coroutines_coreConflatedBroadcastChannel<id> *)viewEffectConsumer __attribute__((swift_name("process(sideEffect:viewEffectConsumer:)")));
+- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(id _Nullable)sideEffect viewEffectConsumer:(id<SharedKotlinx_coroutines_coreChannel>)viewEffectConsumer __attribute__((swift_name("process(sideEffect:viewEffectConsumer:)")));
 @end;
 
 __attribute__((swift_name("Update")))
@@ -543,7 +543,7 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MovieDetailSideEffectHandler")))
 @interface SharedMovieDetailSideEffectHandler : SharedBase <SharedSideEffectHandler>
 - (instancetype)initWithMovieDetailRepository:(SharedMovieDetailRepository *)movieDetailRepository __attribute__((swift_name("init(movieDetailRepository:)"))) __attribute__((objc_designated_initializer));
-- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(SharedMovieDetailSideEffect *)sideEffect viewEffectConsumer:(SharedKotlinx_coroutines_coreConflatedBroadcastChannel<SharedMovieDetailViewEffect *> *)_uiEffectsFlow __attribute__((swift_name("process(sideEffect:viewEffectConsumer:)")));
+- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(SharedMovieDetailSideEffect *)sideEffect viewEffectConsumer:(id<SharedKotlinx_coroutines_coreChannel>)effectsChannel __attribute__((swift_name("process(sideEffect:viewEffectConsumer:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -832,34 +832,41 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSendChannel")))
 @property (readonly) id<SharedKotlinx_coroutines_coreSelectClause2> onSend __attribute__((swift_name("onSend")));
 @end;
 
-__attribute__((swift_name("Kotlinx_coroutines_coreBroadcastChannel")))
-@protocol SharedKotlinx_coroutines_coreBroadcastChannel <SharedKotlinx_coroutines_coreSendChannel>
+__attribute__((swift_name("Kotlinx_coroutines_coreReceiveChannel")))
+@protocol SharedKotlinx_coroutines_coreReceiveChannel
 @required
 - (void)cancelCause:(SharedKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
-- (id<SharedKotlinx_coroutines_coreReceiveChannel>)openSubscription __attribute__((swift_name("openSubscription()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Kotlinx_coroutines_coreConflatedBroadcastChannel")))
-@interface SharedKotlinx_coroutines_coreConflatedBroadcastChannel<E> : SharedBase <SharedKotlinx_coroutines_coreBroadcastChannel>
-- (instancetype)initWithValue:(E _Nullable)value __attribute__((swift_name("init(value:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (void)cancelCause:(SharedKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
-- (BOOL)closeCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("close(cause:)")));
-- (void)invokeOnCloseHandler:(void (^)(SharedKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnClose(handler:)")));
-- (id<SharedKotlinx_coroutines_coreReceiveChannel>)openSubscription __attribute__((swift_name("openSubscription()")));
+- (id<SharedKotlinx_coroutines_coreChannelIterator>)iterator __attribute__((swift_name("iterator()")));
+- (id _Nullable)poll __attribute__((swift_name("poll()"))) __attribute__((deprecated("Deprecated in the favour of 'tryReceive'. Please note that the provided replacement does not rethrow channel's close cause as 'poll' did, for the precise replacement please refer to the 'poll' documentation")));
 
 /**
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)sendElement:(E _Nullable)element completionHandler:(void (^)(SharedKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("send(element:completionHandler:)")));
-- (id _Nullable)trySendElement:(E _Nullable)element __attribute__((swift_name("trySend(element:)")));
-@property (readonly) BOOL isClosedForSend __attribute__((swift_name("isClosedForSend")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause2> onSend __attribute__((swift_name("onSend")));
-@property (readonly) E _Nullable value __attribute__((swift_name("value")));
-@property (readonly) E _Nullable valueOrNull __attribute__((swift_name("valueOrNull")));
+- (void)receiveWithCompletionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("receive(completionHandler:)")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)receiveCatchingWithCompletionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveCatching(completionHandler:)")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)receiveOrNullWithCompletionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveOrNull(completionHandler:)"))) __attribute__((unavailable("Deprecated in favor of 'receiveCatching'. Please note that the provided replacement does not rethrow channel's close cause as 'receiveOrNull' did, for the detailed replacement please refer to the 'receiveOrNull' documentation")));
+- (id _Nullable)tryReceive __attribute__((swift_name("tryReceive()")));
+@property (readonly) BOOL isClosedForReceive __attribute__((swift_name("isClosedForReceive")));
+@property (readonly) BOOL isEmpty __attribute__((swift_name("isEmpty")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceive __attribute__((swift_name("onReceive")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveCatching __attribute__((swift_name("onReceiveCatching")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveOrNull __attribute__((swift_name("onReceiveOrNull"))) __attribute__((unavailable("Deprecated in favor of onReceiveCatching extension")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreChannel")))
+@protocol SharedKotlinx_coroutines_coreChannel <SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreReceiveChannel>
+@required
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1262,42 +1269,28 @@ __attribute__((swift_name("KotlinIterator")))
 - (id _Nullable)next __attribute__((swift_name("next()")));
 @end;
 
-__attribute__((swift_name("Kotlinx_coroutines_coreReceiveChannel")))
-@protocol SharedKotlinx_coroutines_coreReceiveChannel
-@required
-- (void)cancelCause:(SharedKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
-- (id<SharedKotlinx_coroutines_coreChannelIterator>)iterator __attribute__((swift_name("iterator()")));
-- (id _Nullable)poll __attribute__((swift_name("poll()"))) __attribute__((deprecated("Deprecated in the favour of 'tryReceive'. Please note that the provided replacement does not rethrow channel's close cause as 'poll' did, for the precise replacement please refer to the 'poll' documentation")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)receiveWithCompletionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("receive(completionHandler:)")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)receiveCatchingWithCompletionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveCatching(completionHandler:)")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)receiveOrNullWithCompletionHandler:(void (^)(id _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveOrNull(completionHandler:)"))) __attribute__((unavailable("Deprecated in favor of 'receiveCatching'. Please note that the provided replacement does not rethrow channel's close cause as 'receiveOrNull' did, for the detailed replacement please refer to the 'receiveOrNull' documentation")));
-- (id _Nullable)tryReceive __attribute__((swift_name("tryReceive()")));
-@property (readonly) BOOL isClosedForReceive __attribute__((swift_name("isClosedForReceive")));
-@property (readonly) BOOL isEmpty __attribute__((swift_name("isEmpty")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceive __attribute__((swift_name("onReceive")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveCatching __attribute__((swift_name("onReceiveCatching")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveOrNull __attribute__((swift_name("onReceiveOrNull"))) __attribute__((unavailable("Deprecated in favor of onReceiveCatching extension")));
-@end;
-
 __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause2")))
 @protocol SharedKotlinx_coroutines_coreSelectClause2
 @required
 - (void)registerSelectClause2Select:(id<SharedKotlinx_coroutines_coreSelectInstance>)select param:(id _Nullable)param block:(id<SharedKotlinSuspendFunction1>)block __attribute__((swift_name("registerSelectClause2(select:param:block:)")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreChannelIterator")))
+@protocol SharedKotlinx_coroutines_coreChannelIterator
+@required
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)hasNextWithCompletionHandler:(void (^)(SharedBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("hasNext(completionHandler:)")));
+- (id _Nullable)next __attribute__((swift_name("next()")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
+@protocol SharedKotlinx_coroutines_coreSelectClause1
+@required
+- (void)registerSelectClause1Select:(id<SharedKotlinx_coroutines_coreSelectInstance>)select block:(id<SharedKotlinSuspendFunction1>)block __attribute__((swift_name("registerSelectClause1(select:block:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1995,24 +1988,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
 - (NSString *)decodeStringElementDescriptor:(id<SharedKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeStringElement(descriptor:index:)")));
 - (void)endStructureDescriptor:(id<SharedKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("endStructure(descriptor:)")));
 @property (readonly) SharedKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreChannelIterator")))
-@protocol SharedKotlinx_coroutines_coreChannelIterator
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)hasNextWithCompletionHandler:(void (^)(SharedBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("hasNext(completionHandler:)")));
-- (id _Nullable)next __attribute__((swift_name("next()")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
-@protocol SharedKotlinx_coroutines_coreSelectClause1
-@required
-- (void)registerSelectClause1Select:(id<SharedKotlinx_coroutines_coreSelectInstance>)select block:(id<SharedKotlinSuspendFunction1>)block __attribute__((swift_name("registerSelectClause1(select:block:)")));
 @end;
 
 __attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))

@@ -8,17 +8,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.consumeAsFlow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.flatMapMerge
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.merge
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.scan
+import kotlinx.coroutines.flow.*
 import kotlin.contracts.Effect
 
 @FlowPreview
@@ -39,9 +29,9 @@ open class GenericViewModel<State, Event, SideEffect, ViewEffect>(
 
     //TODO single live event, should we use channel with buffer 0? we shouldn't conflate in this case
     //we need all nav events
-    private val _uiEffectsFlow = ConflatedBroadcastChannel<ViewEffect>()
+    private val _uiEffectsFlow = Channel<ViewEffect>()
     override val uiEffectsFlow: Flow<ViewEffect>
-        get() = _uiEffectsFlow.asFlow()
+        get() = _uiEffectsFlow.receiveAsFlow()
 
     private val _stateFlow = MutableStateFlow(init.init())
     override val stateFlow: Flow<State>

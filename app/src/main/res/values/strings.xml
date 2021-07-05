@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Clayground</string>
     <string name="movie_backdrop_image">Movie Details background path</string>
+    <string name="error_movie_details">Error fetching movie details</string>
 </resources>
