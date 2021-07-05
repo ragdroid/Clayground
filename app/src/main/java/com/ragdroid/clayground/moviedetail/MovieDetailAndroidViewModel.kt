@@ -2,6 +2,7 @@ package com.ragdroid.clayground.moviedetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ragdroid.clayground.shared.ui.base.GenericViewModel
 import com.ragdroid.clayground.shared.ui.base.MviViewModel
 import com.ragdroid.clayground.shared.ui.moviedetail.*
 import dagger.hilt.android.lifecycle.HiltViewModel

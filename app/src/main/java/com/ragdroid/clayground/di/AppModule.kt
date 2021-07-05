@@ -1,7 +1,8 @@
 package com.ragdroid.clayground.di
 
 import com.ragdroid.clayground.shared.di.SharedModule
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewModel
+import com.ragdroid.clayground.shared.ui.base.GenericViewModel
+import com.ragdroid.clayground.shared.ui.moviedetail.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

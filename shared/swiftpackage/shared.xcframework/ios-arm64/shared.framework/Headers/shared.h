@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedGenericNativeViewModel<State, Event, ViewEffect>, SharedApiToken, SharedBaseUrl, SharedMovieDetailResponse, SharedKtor_client_coreHttpClient, SharedMovieMetaInfo, SharedMovieDetail, SharedMovieId, SharedKotlinUnit, SharedNext<S, F>, SharedKotlinArray<T>, SharedKotlinEnum<E>, SharedLoadingState, SharedMovieDetailEvent, SharedKotlinThrowable, SharedMovieDetailEventLoadFailed, SharedMovieDetailEventLoadSuccess, SharedMovieDetailSideEffect, SharedMovieDetailSideEffectLoadMovieDetails, SharedMovieDetailRepository, SharedMovieDetailViewEffect, SharedKotlinx_coroutines_coreConflatedBroadcastChannel<E>, SharedMovieDetailState, SharedMovieDetailViewEffectShowError, SharedKermitKermit, SharedKoin_coreKoin, SharedKotlinx_serialization_jsonJson, SharedKoin_coreModule, SharedMovieDetailViewModel, SharedKermitLogger, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpClientConfig<T>, SharedKtor_client_coreHttpRequestBuilder, SharedKtor_client_coreHttpClientCall, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKotlinCancellationException, SharedKermitSeverity, SharedKoin_coreScope, SharedKoin_coreParametersHolder, SharedKotlinLazyThreadSafetyMode, SharedKoin_coreLogger, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_jsonJsonConfiguration, SharedKotlinx_serialization_jsonJsonElement, SharedKoin_coreInstanceFactory<T>, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreScopeDSL, SharedKoin_coreSingleInstanceFactory<T>, SharedKotlinAbstractCoroutineContextElement, SharedKtor_client_coreHttpRequestData, SharedKtor_client_coreHttpResponseData, SharedKtor_client_coreProxyConfig, SharedKotlinNothing, SharedKtor_httpHeadersBuilder, SharedKtor_httpURLBuilder, SharedKtor_httpHttpMethod, SharedKtor_client_coreTypeInfo, SharedKtor_client_coreHttpResponse, SharedKtor_utilsAttributeKey<T>, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline<TSubject, TContext>, SharedKtor_client_coreHttpResponseContainer, SharedKotlinx_serialization_coreSerialKind, SharedKoin_coreLevel, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKtor_httpUrl, SharedKtor_httpOutgoingContent, SharedKtor_httpHttpStatusCode, SharedKtor_utilsGMTDate, SharedKtor_httpHttpProtocolVersion, SharedKtor_utilsStringValuesBuilder, SharedKtor_httpURLProtocol, SharedKtor_httpParametersBuilder, SharedKtor_ioMemory, SharedKtor_ioIoBuffer, SharedKotlinByteArray, SharedKtor_ioByteReadPacket, SharedKtor_ioByteOrder, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKtor_httpContentType, SharedKtor_utilsWeekDay, SharedKtor_utilsMonth, SharedKtor_httpUrlEncodingOption, SharedKtor_ioBuffer, SharedKtor_ioChunkBuffer, SharedKotlinCharArray, SharedKotlinByteIterator, SharedKtor_ioAbstractInput, SharedKtor_ioByteReadPacketBase, SharedKtor_ioByteReadPacketPlatformBase, SharedKotlinKTypeProjection, SharedKotlinx_coroutines_coreAtomicOp<__contravariant T>, SharedKotlinx_coroutines_coreOpDescriptor, SharedKotlinx_coroutines_coreLockFreeLinkedListNode, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SharedKtor_httpHeaderValueParam, SharedKtor_httpHeaderValueWithParameters, SharedKotlinCharIterator, SharedKotlinKVariance, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
+@class SharedGenericNativeViewModel<State, Event, ViewEffect>, SharedApiToken, SharedBaseUrl, SharedMovieDetailResponse, SharedKtor_client_coreHttpClient, SharedMovieMetaInfo, SharedMovieDetail, SharedMovieId, SharedKotlinUnit, SharedKermitKermit, SharedNext<S, F>, SharedKotlinArray<T>, SharedKotlinx_coroutines_coreConflatedBroadcastChannel<E>, SharedKotlinEnum<E>, SharedLoadingState, SharedMovieDetailEvent, SharedKotlinThrowable, SharedMovieDetailEventLoadFailed, SharedMovieDetailEventLoadSuccess, SharedMovieDetailState, SharedMovieDetailSideEffect, SharedMovieDetailSideEffectLoadMovieDetails, SharedMovieDetailRepository, SharedMovieDetailViewEffect, SharedMovieDetailViewEffectShowError, SharedGenericViewModel<State, Event, SideEffect, ViewEffect>, SharedKoin_coreKoin, SharedKotlinx_serialization_jsonJson, SharedKoin_coreModule, SharedMovieDetailViewModel, SharedKermitLogger, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpClientConfig<T>, SharedKtor_client_coreHttpRequestBuilder, SharedKtor_client_coreHttpClientCall, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKermitSeverity, SharedKotlinCancellationException, SharedKoin_coreScope, SharedKoin_coreParametersHolder, SharedKotlinLazyThreadSafetyMode, SharedKoin_coreLogger, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_jsonJsonConfiguration, SharedKotlinx_serialization_jsonJsonElement, SharedKoin_coreInstanceFactory<T>, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreScopeDSL, SharedKoin_coreSingleInstanceFactory<T>, SharedKotlinAbstractCoroutineContextElement, SharedKtor_client_coreHttpRequestData, SharedKtor_client_coreHttpResponseData, SharedKtor_client_coreProxyConfig, SharedKotlinNothing, SharedKtor_httpHeadersBuilder, SharedKtor_httpURLBuilder, SharedKtor_httpHttpMethod, SharedKtor_client_coreTypeInfo, SharedKtor_client_coreHttpResponse, SharedKtor_utilsAttributeKey<T>, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline<TSubject, TContext>, SharedKtor_client_coreHttpResponseContainer, SharedKotlinx_serialization_coreSerialKind, SharedKoin_coreLevel, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKtor_httpUrl, SharedKtor_httpOutgoingContent, SharedKtor_httpHttpStatusCode, SharedKtor_utilsGMTDate, SharedKtor_httpHttpProtocolVersion, SharedKtor_utilsStringValuesBuilder, SharedKtor_httpURLProtocol, SharedKtor_httpParametersBuilder, SharedKtor_ioMemory, SharedKtor_ioIoBuffer, SharedKotlinByteArray, SharedKtor_ioByteReadPacket, SharedKtor_ioByteOrder, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKtor_httpContentType, SharedKtor_utilsWeekDay, SharedKtor_utilsMonth, SharedKtor_httpUrlEncodingOption, SharedKtor_ioBuffer, SharedKtor_ioChunkBuffer, SharedKotlinCharArray, SharedKotlinByteIterator, SharedKtor_ioAbstractInput, SharedKtor_ioByteReadPacketBase, SharedKtor_ioByteReadPacketPlatformBase, SharedKotlinKTypeProjection, SharedKotlinx_coroutines_coreAtomicOp<__contravariant T>, SharedKotlinx_coroutines_coreOpDescriptor, SharedKotlinx_coroutines_coreLockFreeLinkedListNode, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SharedKtor_httpHeaderValueParam, SharedKtor_httpHeaderValueWithParameters, SharedKotlinCharIterator, SharedKotlinKVariance, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
 
-@protocol SharedMoviesService, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreFlow, SharedMviViewModel, SharedKotlinComparable, SharedKoin_coreKoinComponent, SharedKotlinCoroutineContext, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_client_coreHttpClientEngineCapability, SharedKtor_utilsAttributes, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinIterator, SharedKotlinx_coroutines_coreReceiveChannel, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreBroadcastChannel, SharedKoin_coreKoinScopeComponent, SharedKoin_coreQualifier, SharedKotlinKClass, SharedKotlinLazy, SharedKotlinx_serialization_coreSerialFormat, SharedKotlinx_serialization_coreStringFormat, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_client_coreHttpClientFeature, SharedKtor_httpHttpMessageBuilder, SharedKotlinx_coroutines_coreJob, SharedKtor_ioByteReadChannel, SharedKtor_utilsTypeInfo, SharedKtor_client_coreHttpRequest, SharedKotlinSuspendFunction2, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinSuspendFunction1, SharedKoin_coreScopeCallback, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKtor_httpHeaders, SharedKtor_utilsStringValues, SharedKotlinMapEntry, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKtor_ioReadSession, SharedKotlinAppendable, SharedKotlinKType, SharedKtor_httpHttpMessage, SharedKotlinFunction, SharedKtor_httpParameters, SharedKotlinx_coroutines_coreParentJob, SharedKotlinSuspendFunction0, SharedKtor_ioObjectPool, SharedKtor_ioInput, SharedKtor_ioOutput;
+@protocol SharedMoviesService, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreFlow, SharedMviViewModel, SharedInit, SharedUpdate, SharedSideEffectHandler, SharedKotlinComparable, SharedKoin_coreKoinComponent, SharedKotlinCoroutineContext, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_client_coreHttpClientEngineCapability, SharedKtor_utilsAttributes, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinIterator, SharedKotlinx_coroutines_coreReceiveChannel, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreBroadcastChannel, SharedKoin_coreKoinScopeComponent, SharedKoin_coreQualifier, SharedKotlinKClass, SharedKotlinLazy, SharedKotlinx_serialization_coreSerialFormat, SharedKotlinx_serialization_coreStringFormat, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_client_coreHttpClientFeature, SharedKtor_httpHttpMessageBuilder, SharedKotlinx_coroutines_coreJob, SharedKtor_ioByteReadChannel, SharedKtor_utilsTypeInfo, SharedKtor_client_coreHttpRequest, SharedKotlinSuspendFunction2, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinSuspendFunction1, SharedKoin_coreScopeCallback, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKtor_httpHeaders, SharedKtor_utilsStringValues, SharedKotlinMapEntry, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKtor_ioReadSession, SharedKotlinAppendable, SharedKotlinKType, SharedKtor_httpHttpMessage, SharedKotlinFunction, SharedKtor_httpParameters, SharedKotlinx_coroutines_coreParentJob, SharedKotlinSuspendFunction0, SharedKtor_ioObjectPool, SharedKtor_ioInput, SharedKtor_ioOutput;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -345,6 +345,28 @@ __attribute__((swift_name("GenericNativeViewModel")))
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 @end;
 
+__attribute__((swift_name("GenericViewModel")))
+@interface SharedGenericViewModel<State, Event, SideEffect, ViewEffect> : SharedGenericNativeViewModel<State, Event, ViewEffect>
+- (instancetype)initWithKermit:(SharedKermitKermit *)kermit init:(id<SharedInit>)init update:(id<SharedUpdate>)update effectHandler:(id<SharedSideEffectHandler>)effectHandler __attribute__((swift_name("init(kermit:init:update:effectHandler:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)dispatchEventEvent:(Event _Nullable)event completionHandler:(void (^)(SharedKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("dispatchEvent(event:completionHandler:)")));
+- (void)initializeInViewModelScope:(id<SharedKotlinx_coroutines_coreCoroutineScope>)viewModelScope __attribute__((swift_name("initializeIn(viewModelScope:)")));
+@property (readonly) id<SharedKotlinx_coroutines_coreFlow> stateFlow __attribute__((swift_name("stateFlow")));
+@property (readonly) id<SharedKotlinx_coroutines_coreFlow> uiEffectsFlow __attribute__((swift_name("uiEffectsFlow")));
+@end;
+
+__attribute__((swift_name("Init")))
+@protocol SharedInit
+@required
+- (id _Nullable)doInit __attribute__((swift_name("doInit()")));
+@end;
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Next")))
 @interface SharedNext<S, F> : SharedBase
@@ -374,6 +396,18 @@ __attribute__((swift_name("NextCompanion")))
 - (SharedNext<id, id> *)noChange __attribute__((swift_name("noChange()")));
 @end;
 
+__attribute__((swift_name("SideEffectHandler")))
+@protocol SharedSideEffectHandler
+@required
+- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(id _Nullable)sideEffect viewEffectConsumer:(SharedKotlinx_coroutines_coreConflatedBroadcastChannel<id> *)viewEffectConsumer __attribute__((swift_name("process(sideEffect:viewEffectConsumer:)")));
+@end;
+
+__attribute__((swift_name("Update")))
+@protocol SharedUpdate
+@required
+- (SharedNext<id, id> *)updateState:(id _Nullable)state event:(id _Nullable)event __attribute__((swift_name("update(state:event:)")));
+@end;
+
 __attribute__((swift_name("KotlinComparable")))
 @protocol SharedKotlinComparable
 @required
@@ -399,8 +433,7 @@ __attribute__((swift_name("LoadingState")))
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedLoadingState *loading __attribute__((swift_name("loading")));
 @property (class, readonly) SharedLoadingState *idle __attribute__((swift_name("idle")));
-@property (class, readonly) SharedLoadingState *dancing __attribute__((swift_name("dancing")));
-@property (class, readonly) SharedLoadingState *drooling __attribute__((swift_name("drooling")));
+@property (class, readonly) SharedLoadingState *jumping __attribute__((swift_name("jumping")));
 + (SharedKotlinArray<SharedLoadingState *> *)values __attribute__((swift_name("values()")));
 @end;
 
@@ -478,6 +511,14 @@ __attribute__((swift_name("MovieDetailEvent.Upvote")))
 + (instancetype)upvote __attribute__((swift_name("init()")));
 @end;
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MovieDetailInit")))
+@interface SharedMovieDetailInit : SharedBase <SharedInit>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (SharedMovieDetailState *)doInit __attribute__((swift_name("doInit()")));
+@end;
+
 __attribute__((swift_name("MovieDetailSideEffect")))
 @interface SharedMovieDetailSideEffect : SharedBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
@@ -500,9 +541,9 @@ __attribute__((swift_name("MovieDetailSideEffect.LoadMovieDetails")))
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MovieDetailSideEffectHandler")))
-@interface SharedMovieDetailSideEffectHandler : SharedBase
+@interface SharedMovieDetailSideEffectHandler : SharedBase <SharedSideEffectHandler>
 - (instancetype)initWithMovieDetailRepository:(SharedMovieDetailRepository *)movieDetailRepository __attribute__((swift_name("init(movieDetailRepository:)"))) __attribute__((objc_designated_initializer));
-- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(SharedMovieDetailSideEffect *)sideEffect _uiEffectsFlow:(SharedKotlinx_coroutines_coreConflatedBroadcastChannel<SharedMovieDetailViewEffect *> *)_uiEffectsFlow __attribute__((swift_name("process(sideEffect:_uiEffectsFlow:)")));
+- (id<SharedKotlinx_coroutines_coreFlow>)processSideEffect:(SharedMovieDetailSideEffect *)sideEffect viewEffectConsumer:(SharedKotlinx_coroutines_coreConflatedBroadcastChannel<SharedMovieDetailViewEffect *> *)_uiEffectsFlow __attribute__((swift_name("process(sideEffect:viewEffectConsumer:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -521,7 +562,7 @@ __attribute__((swift_name("MovieDetailState")))
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MovieDetailUpdate")))
-@interface SharedMovieDetailUpdate : SharedBase
+@interface SharedMovieDetailUpdate : SharedBase <SharedUpdate>
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (SharedNext<SharedMovieDetailState *, SharedMovieDetailSideEffect *> *)updateState:(SharedMovieDetailState *)state event:(SharedMovieDetailEvent *)event __attribute__((swift_name("update(state:event:)")));
@@ -549,19 +590,10 @@ __attribute__((swift_name("MovieDetailViewEffect.ShowError")))
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MovieDetailViewModel")))
-@interface SharedMovieDetailViewModel : SharedGenericNativeViewModel<SharedMovieDetailState *, SharedMovieDetailEvent *, SharedMovieDetailViewEffect *>
+@interface SharedMovieDetailViewModel : SharedGenericViewModel<SharedMovieDetailState *, SharedMovieDetailEvent *, SharedMovieDetailSideEffect *, SharedMovieDetailViewEffect *>
 - (instancetype)initWithMovieDetailRepository:(SharedMovieDetailRepository *)movieDetailRepository kermit:(SharedKermitKermit *)kermit __attribute__((swift_name("init(movieDetailRepository:kermit:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (instancetype)new __attribute__((unavailable));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)dispatchEventEvent:(SharedMovieDetailEvent *)event completionHandler:(void (^)(SharedKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("dispatchEvent(event:completionHandler:)")));
-- (void)initializeInViewModelScope:(id<SharedKotlinx_coroutines_coreCoroutineScope>)viewModelScope __attribute__((swift_name("initializeIn(viewModelScope:)")));
-@property (readonly) id<SharedKotlinx_coroutines_coreFlow> stateFlow __attribute__((swift_name("stateFlow")));
-@property (readonly) id<SharedKotlinx_coroutines_coreFlow> uiEffectsFlow __attribute__((swift_name("uiEffectsFlow")));
+- (instancetype)initWithKermit:(SharedKermitKermit *)kermit init:(id<SharedInit>)init update:(id<SharedUpdate>)update effectHandler:(id<SharedSideEffectHandler>)effectHandler __attribute__((swift_name("init(kermit:init:update:effectHandler:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (readonly) SharedMovieDetailRepository *movieDetailRepository __attribute__((swift_name("movieDetailRepository")));
 @end;
 
 __attribute__((swift_name("Koin_coreKoinComponent")))
@@ -738,6 +770,40 @@ __attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KermitKermit")))
+@interface SharedKermitKermit : SharedBase
+- (instancetype)initWithLoggers:(SharedKotlinArray<SharedKermitLogger *> *)loggers __attribute__((swift_name("init(loggers:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithLogger:(SharedKermitLogger *)logger __attribute__((swift_name("init(logger:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithLoggerList:(NSArray<SharedKermitLogger *> *)loggerList defaultTag:(NSString *)defaultTag __attribute__((swift_name("init(loggerList:defaultTag:)"))) __attribute__((objc_designated_initializer));
+- (void)dWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("d(withMessage:)")));
+- (void)dWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("d(withTag:message:)")));
+- (void)dTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("d(tag:throwable:message:)")));
+- (void)dWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("d(withThrowable:message:)")));
+- (void)eWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("e(withMessage:)")));
+- (void)eWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("e(withTag:message:)")));
+- (void)eTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("e(tag:throwable:message:)")));
+- (void)eWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("e(withThrowable:message:)")));
+- (void)iWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("i(withMessage:)")));
+- (void)iWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("i(withTag:message:)")));
+- (void)iTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("i(tag:throwable:message:)")));
+- (void)iWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("i(withThrowable:message:)")));
+- (void)logSeverity:(SharedKermitSeverity *)severity tag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("log(severity:tag:throwable:message:)")));
+- (void)vWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("v(withMessage:)")));
+- (void)vWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("v(withTag:message:)")));
+- (void)vTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("v(tag:throwable:message:)")));
+- (void)vWithThrowable:(SharedKotlinThrowable *)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("v(withThrowable:message:)")));
+- (void)wWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("w(withMessage:)")));
+- (void)wWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("w(withTag:message:)")));
+- (void)wTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("w(tag:throwable:message:)")));
+- (void)wWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("w(withThrowable:message:)")));
+- (SharedKermitKermit *)withTagDefaultTag:(NSString *)defaultTag __attribute__((swift_name("withTag(defaultTag:)")));
+- (void)wtfWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("wtf(withMessage:)")));
+- (void)wtfWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("wtf(withTag:message:)")));
+- (void)wtfTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("wtf(tag:throwable:message:)")));
+- (void)wtfWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("wtf(withThrowable:message:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinArray")))
 @interface SharedKotlinArray<T> : SharedBase
 + (instancetype)arrayWithSize:(int32_t)size init:(T _Nullable (^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
@@ -794,40 +860,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreConflatedBroadcastChannel")))
 @property (readonly) id<SharedKotlinx_coroutines_coreSelectClause2> onSend __attribute__((swift_name("onSend")));
 @property (readonly) E _Nullable value __attribute__((swift_name("value")));
 @property (readonly) E _Nullable valueOrNull __attribute__((swift_name("valueOrNull")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KermitKermit")))
-@interface SharedKermitKermit : SharedBase
-- (instancetype)initWithLoggers:(SharedKotlinArray<SharedKermitLogger *> *)loggers __attribute__((swift_name("init(loggers:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithLogger:(SharedKermitLogger *)logger __attribute__((swift_name("init(logger:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithLoggerList:(NSArray<SharedKermitLogger *> *)loggerList defaultTag:(NSString *)defaultTag __attribute__((swift_name("init(loggerList:defaultTag:)"))) __attribute__((objc_designated_initializer));
-- (void)dWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("d(withMessage:)")));
-- (void)dWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("d(withTag:message:)")));
-- (void)dTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("d(tag:throwable:message:)")));
-- (void)dWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("d(withThrowable:message:)")));
-- (void)eWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("e(withMessage:)")));
-- (void)eWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("e(withTag:message:)")));
-- (void)eTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("e(tag:throwable:message:)")));
-- (void)eWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("e(withThrowable:message:)")));
-- (void)iWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("i(withMessage:)")));
-- (void)iWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("i(withTag:message:)")));
-- (void)iTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("i(tag:throwable:message:)")));
-- (void)iWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("i(withThrowable:message:)")));
-- (void)logSeverity:(SharedKermitSeverity *)severity tag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("log(severity:tag:throwable:message:)")));
-- (void)vWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("v(withMessage:)")));
-- (void)vWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("v(withTag:message:)")));
-- (void)vTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("v(tag:throwable:message:)")));
-- (void)vWithThrowable:(SharedKotlinThrowable *)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("v(withThrowable:message:)")));
-- (void)wWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("w(withMessage:)")));
-- (void)wWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("w(withTag:message:)")));
-- (void)wTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("w(tag:throwable:message:)")));
-- (void)wWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("w(withThrowable:message:)")));
-- (SharedKermitKermit *)withTagDefaultTag:(NSString *)defaultTag __attribute__((swift_name("withTag(defaultTag:)")));
-- (void)wtfWithMessage:(NSString *(^)(void))withMessage __attribute__((swift_name("wtf(withMessage:)")));
-- (void)wtfWithTag:(NSString *)withTag message:(NSString *(^)(void))message __attribute__((swift_name("wtf(withTag:message:)")));
-- (void)wtfTag:(NSString *)tag throwable:(SharedKotlinThrowable * _Nullable)throwable message:(NSString *(^)(void))message __attribute__((swift_name("wtf(tag:throwable:message:)")));
-- (void)wtfWithThrowable:(SharedKotlinThrowable * _Nullable)withThrowable message:(NSString *(^)(void))message __attribute__((swift_name("wtf(withThrowable:message:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1208,6 +1240,21 @@ __attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
 - (void)emitValue:(id _Nullable)value completionHandler:(void (^)(SharedKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
 @end;
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KermitSeverity")))
+@interface SharedKermitSeverity : SharedKotlinEnum<SharedKermitSeverity *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) SharedKermitSeverity *verbose __attribute__((swift_name("verbose")));
+@property (class, readonly) SharedKermitSeverity *debug __attribute__((swift_name("debug")));
+@property (class, readonly) SharedKermitSeverity *info __attribute__((swift_name("info")));
+@property (class, readonly) SharedKermitSeverity *warn __attribute__((swift_name("warn")));
+@property (class, readonly) SharedKermitSeverity *error __attribute__((swift_name("error")));
+@property (class, readonly) SharedKermitSeverity *assert __attribute__((swift_name("assert")));
++ (SharedKotlinArray<SharedKermitSeverity *> *)values __attribute__((swift_name("values()")));
+@end;
+
 __attribute__((swift_name("KotlinIterator")))
 @protocol SharedKotlinIterator
 @required
@@ -1251,21 +1298,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause2")))
 @protocol SharedKotlinx_coroutines_coreSelectClause2
 @required
 - (void)registerSelectClause2Select:(id<SharedKotlinx_coroutines_coreSelectInstance>)select param:(id _Nullable)param block:(id<SharedKotlinSuspendFunction1>)block __attribute__((swift_name("registerSelectClause2(select:param:block:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KermitSeverity")))
-@interface SharedKermitSeverity : SharedKotlinEnum<SharedKermitSeverity *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) SharedKermitSeverity *verbose __attribute__((swift_name("verbose")));
-@property (class, readonly) SharedKermitSeverity *debug __attribute__((swift_name("debug")));
-@property (class, readonly) SharedKermitSeverity *info __attribute__((swift_name("info")));
-@property (class, readonly) SharedKermitSeverity *warn __attribute__((swift_name("warn")));
-@property (class, readonly) SharedKermitSeverity *error __attribute__((swift_name("error")));
-@property (class, readonly) SharedKermitSeverity *assert __attribute__((swift_name("assert")));
-+ (SharedKotlinArray<SharedKermitSeverity *> *)values __attribute__((swift_name("values()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
