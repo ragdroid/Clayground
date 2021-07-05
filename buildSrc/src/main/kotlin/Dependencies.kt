@@ -46,7 +46,7 @@ object DI {
     object Versions {
         const val hilt = "2.36"
         const val lifecycle = "1.0.0-alpha01"
-        const val koin = "3.0.1-beta-1"
+        const val koin = "3.1.1"
     }
 
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"

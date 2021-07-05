@@ -80,9 +80,10 @@ class MovieDetailSideEffectHandler(
             }
                 .onStart { delay(3000) }
                 .catch {
-                _uiEffectsFlow.send(MovieDetailViewEffect.ShowError(it))
-                emit(MovieDetailEvent.LoadFailed(it))
-            }
+                    it.printStackTrace()
+                    _uiEffectsFlow.send(MovieDetailViewEffect.ShowError(it))
+                    emit(MovieDetailEvent.LoadFailed(it))
+                }
         }
 }
 
