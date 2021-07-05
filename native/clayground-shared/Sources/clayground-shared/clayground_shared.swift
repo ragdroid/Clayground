@@ -51,7 +51,7 @@ public final class MovieDetailViewState: ObservableObject {
 	private lazy var viewModel = NativeViewModel(viewModel: kmpViewModel, render: handleRender, viewEffectHandler: handleViewEffect)
 
 	private func handleRender(_ state: MovieDetailState?) {
-		isLoading = state?.loadingState == LoadingState.Loading()
+        isLoading = state?.loadingState == LoadingState.loading
 		name = state?.movieDetails?.title ?? "A movie has no name"
 	}
 

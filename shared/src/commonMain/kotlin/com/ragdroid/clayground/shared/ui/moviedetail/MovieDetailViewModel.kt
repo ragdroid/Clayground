@@ -38,7 +38,7 @@ class MovieDetailViewModel(
         ensureNeverFrozen()
     }
     //TODO should this be a normal channel instead?
-    private val eventsFlow = MutableStateFlow<MovieDetailEvent?>(null)
+    private val eventsFlow = Channel<MovieDetailEvent>(Channel.UNLIMITED)
     private val sideEffectsFlow = Channel<MovieDetailSideEffect>(Channel.UNLIMITED)
 
     //TODO single live event, should we use channel with buffer 0? we shouldn't conflate in this case
@@ -59,7 +59,7 @@ class MovieDetailViewModel(
                 val movieDetailSideEffectHandler = MovieDetailSideEffectHandler(movieDetailRepository)
                 movieDetailSideEffectHandler.process(it, _uiEffectsFlow)
             }
-        merge(eventsFlow, resultsFlow)
+        merge(eventsFlow.consumeAsFlow(), resultsFlow)
             .onEach {
                 kermit.d { "Event: $it" }
             }
@@ -88,13 +88,8 @@ class MovieDetailViewModel(
         kermit.d {
             "inside MovieDetailViewModel: dispatch Event with $event"
         }
-        eventsFlow.onCompletion {
-            kermit.d {
-                "MovieDetailViewMode: eventsFlow completed"
-            }
-        }
-        merge(flowOf(event), eventsFlow)
-        eventsFlow.emit(event)
+
+        eventsFlow.send(event)
     }
 
 }

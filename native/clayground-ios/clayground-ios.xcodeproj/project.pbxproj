@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DDE72872607E4A3000AA288 /* clayground-shared in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDE72862607E4A3000AA288 /* clayground-shared */; };
 		3DF66F322607BBE60043A9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F312607BBE60043A9A5 /* Assets.xcassets */; };
 		3DF66F352607BBE60043A9A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */; };
 		3DF66F402607BBE60043A9A5 /* clayground_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F3F2607BBE60043A9A5 /* clayground_iosTests.swift */; };
 		3DF66F4B2607BBE60043A9A5 /* clayground_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF66F4A2607BBE60043A9A5 /* clayground_iosUITests.swift */; };
+		9F88F1A326908DDA007244DA /* clayground-shared in Frameworks */ = {isa = PBXBuildFile; productRef = 9F88F1A226908DDA007244DA /* clayground-shared */; };
 		9F9E1E78260A83C30004629A /* ClaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E1E77260A83C30004629A /* ClaygroundApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D4C4A9C2607E37600B48C79 /* clayground-shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "clayground-shared"; path = "../clayground-shared"; sourceTree = "<group>"; };
 		3DF66F2A2607BBE50043A9A5 /* clayground-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clayground-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF66F312607BBE60043A9A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DF66F342607BBE60043A9A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -66,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DDE72872607E4A3000AA288 /* clayground-shared in Frameworks */,
+				9F88F1A326908DDA007244DA /* clayground-shared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +96,6 @@
 		3DF66F212607BBE50043A9A5 = {
 			isa = PBXGroup;
 			children = (
-				3D4C4A9C2607E37600B48C79 /* clayground-shared */,
 				3DF66F2C2607BBE50043A9A5 /* clayground-ios */,
 				3DF66F3E2607BBE60043A9A5 /* clayground-iosTests */,
 				3DF66F492607BBE60043A9A5 /* clayground-iosUITests */,
@@ -172,7 +170,7 @@
 			);
 			name = "clayground-ios";
 			packageProductDependencies = (
-				3DDE72862607E4A3000AA288 /* clayground-shared */,
+				9F88F1A226908DDA007244DA /* clayground-shared */,
 			);
 			productName = "clayground-ios";
 			productReference = 3DF66F2A2607BBE50043A9A5 /* clayground-ios.app */;
@@ -615,7 +613,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3DDE72862607E4A3000AA288 /* clayground-shared */ = {
+		9F88F1A226908DDA007244DA /* clayground-shared */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "clayground-shared";
 		};

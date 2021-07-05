@@ -3,10 +3,7 @@ package com.ragdroid.clayground.moviedetail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ragdroid.clayground.shared.ui.base.MviViewModel
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailEvent
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailState
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewEffect
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewModel
+import com.ragdroid.clayground.shared.ui.moviedetail.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -23,6 +20,7 @@ class MovieDetailAndroidViewModel @Inject constructor(
     init {
         movieDetailViewModel.initializeIn(viewModelScope)
     }
+
     fun dispatch(event: MovieDetailEvent) {
         viewModelScope.launch {
             movieDetailViewModel.dispatchEvent(event)

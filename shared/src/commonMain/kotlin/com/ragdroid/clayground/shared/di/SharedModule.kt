@@ -24,28 +24,36 @@ import kotlin.native.concurrent.ThreadLocal
 class SharedModule {
     val apiModule = module {
         single {
-            val apiToken: ApiToken = get()
-            //providing json as a dependency separately causes kotlin native to freeze, not sure why yet
-            val json = Json {
-                ignoreUnknownKeys = true
-            }
-            HttpClient {
-                install(JsonFeature) {
-                    serializer = KotlinxSerializer(json)
-                }
-                install(Logging) {
-                    logger = Logger.DEFAULT
-                    level = LogLevel.INFO
-                }
-            }
+            json()
+        }
+        single {
+            httpClient(get())
         }
         single { BaseUrl("https://api.themoviedb.org/3") }
         single { ApiToken(BuildKonfig.TMDB_API_TOKEN) }
-        single { MovieDetailRepository(get()) }
         single { MoviesServiceImpl(get(), get(), get()) as MoviesService }
+        single { MovieDetailRepository(get()) }
         single { Kermit(kermitLogger()) }
         single { MovieDetailViewModel(get(), get()) }
     }
+
+    fun json() = Json {
+        isLenient = true
+        ignoreUnknownKeys = true
+        //https://github.com/Kotlin/kotlinx.serialization/issues/1450#issuecomment-841214332
+        useAlternativeNames = false
+    }
+
+    private fun httpClient(json: Json) = HttpClient {
+        install(JsonFeature) {
+            serializer = KotlinxSerializer(json)
+        }
+        install(Logging) {
+            logger = Logger.DEFAULT
+            level = LogLevel.INFO
+        }
+    }
+
     fun configure() {
         startKoin {
             modules(apiModule)

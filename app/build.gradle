@@ -68,9 +68,13 @@ dependencies {
     implementation Compose.material
     implementation Compose.materialIcons
     implementation Compose.uiTooling
+    implementation Compose.glide
     implementation AndroidX.lifecycleRuntimeKtx
-    implementation Coroutines.core
-
+    implementation(Coroutines.coreNative) {
+        version {
+            strictly '1.5.0-native-mt'
+        }
+    }
     implementation project(':shared')
     implementation project(':base-mvi')
 

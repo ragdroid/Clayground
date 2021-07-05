@@ -4,63 +4,206 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.google.accompanist.glide.rememberGlidePainter
 import com.ragdroid.clayground.shared.ui.moviedetail.LoadingState
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailEvent
 import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailState
 import com.ragdroid.clayground.theme.MovieTheme
+import com.ragdroid.clayground.util.LogCompositions
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
-import timber.log.Timber
+import com.ragdroid.clayground.R
+import com.ragdroid.clayground.shared.domain.models.MovieDetail
 
 @ExperimentalCoroutinesApi
 @FlowPreview
 @AndroidEntryPoint
 class MovieDetailActivity: AppCompatActivity() {
+
     private val viewModel: MovieDetailAndroidViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.dispatch(MovieDetailEvent.Load)
         setContent {
-            val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
+            val scrollState = rememberScrollState()
+            val themeColors = MovieTheme.darkColors
+//            val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
-                val state = viewModel.stateFlow.collectAsState(MovieDetailState()).value
-                Loader(loadingState = state.loadingState)
-                Column {
-                    MovieTitle(state.movieDetails?.title)
+                Column(Modifier.verticalScroll(scrollState)) {
+                    MovieDetail()
+                    RefreshButton()
+                    UpvoteButton()
+                    DownvoteButton()
                 }
             }
         }
     }
     @Composable
+    fun RefreshButton() {
+        LogCompositions("MovieDetailActivity","recomposed RefreshButton")
+        Button(onClick = {
+            viewModel.dispatch(MovieDetailEvent.Reload)
+        }) {
+            Text(text = "Reload")
+        }
+    }
+
+    @Composable
+    fun UpvoteButton() {
+        LogCompositions("MovieDetailActivity","recomposed UpvoteButton")
+        Button(onClick = {
+            viewModel.dispatch(MovieDetailEvent.Upvote)
+        }) {
+            Text(text = "Upvote")
+        }
+    }
+
+    @Composable
+    fun DownvoteButton() {
+        LogCompositions("MovieDetailActivity","recomposed DownvoteButton")
+        Button(onClick = {
+            viewModel.dispatch(MovieDetailEvent.Downvote)
+        }) {
+            Text(text = "Downvote")
+        }
+    }
+
+
+    @Composable
+    fun MovieDetail() {
+        val state: MovieDetailState by viewModel.stateFlow.collectAsState(initial = MovieDetailState())
+
+        LogCompositions("MovieDetailActivity","recomposed MovieDetail state: $state")
+        Box(contentAlignment = Alignment.BottomStart) {
+            Loader(loadingState = state.loadingState)
+            val movieDetails = state.movieDetails
+            movieDetails?.let { movieDetail ->
+                //TODO?
+                MovieBackdrop(movieDetail.backdropPath)
+                Column(
+                    Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.Bottom
+                ) {
+                    MovieTitle(title = movieDetail.title)
+                    MovieOverview(overview = movieDetail.overview)
+                    MovieVotes(voteCount = movieDetail.voteCount)
+                    MovieLength(length = movieDetail.runtime)
+                    MovieReleaseDate(releaseDate = movieDetail.releaseDate)
+                }
+            }
+        }
+    }
+
+    @Composable
+    private fun MovieBackdrop(backdropPath: String?) {
+        LogCompositions("MovieDetailActivity","recomposed MovieBackdrop: $backdropPath")
+        Image(
+            painter = rememberGlidePainter(
+                request = backdropPath
+            ),
+            contentDescription = stringResource(id = R.string.movie_backdrop_image),
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .height(500.dp)
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.TopCenter),
+        )
+    }
+
+    @Composable
     fun Loader(loadingState: LoadingState) {
-        Timber.d("recomposed loader")
-        if (loadingState == LoadingState.Loading) {
-            Box(Modifier.fillMaxHeight().fillMaxWidth().wrapContentSize(Alignment.Center)) {
+        LogCompositions("MovieDetailActivity","recomposed Loader loadingState: $loadingState")
+        if (loadingState == LoadingState.LOADING) {
+            Box(
+                Modifier
+                    .wrapContentSize(Alignment.Center)
+            ) {
                 CircularProgressIndicator()
             }
         }
     }
+
     @Composable
     fun MovieTitle(title: String?) {
-        Timber.d("recomposed movieTitle")
+        LogCompositions("MovieDetailActivity","recomposed MovieTitle title: $title")
         title?.let {
             Text(
                 text = title,
-                modifier = Modifier.fillMaxWidth().wrapContentSize(Alignment.Center),
+                fontSize = 36.sp,
+                fontWeight = FontWeight.ExtraBold,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.CenterStart),
+                color = MaterialTheme.colors.onBackground
+            )
+        }
+    }
+
+    @Composable
+    fun MovieOverview(overview: String) {
+        LogCompositions("MovieDetailActivity","recomposed MovieOverview overview: $overview")
+        Text(
+            text = overview,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.CenterStart),
+            color = MaterialTheme.colors.onBackground
+        )
+    }
+
+    @Composable
+    fun MovieVotes(voteCount: Int) {
+        LogCompositions("MovieDetailActivity","recomposed MovieVotes voteCount: $voteCount")
+        Text(
+            text = voteCount.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.CenterStart),
+            color = MaterialTheme.colors.onBackground
+        )
+    }
+
+    @Composable
+    fun MovieLength(length: Int) {
+        LogCompositions("MovieDetailActivity","recomposed MovieLenght length: $length")
+        Text(
+            text = length.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.CenterStart),
+            color = MaterialTheme.colors.onBackground
+        )
+    }
+
+    @Composable
+    fun MovieReleaseDate(releaseDate: String?) {
+        LogCompositions("MovieDetailActivity","recomposed MovieReleaseDate releaseDate: $releaseDate")
+        releaseDate?.let {
+            Text(
+                text = releaseDate,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.CenterStart),
                 color = MaterialTheme.colors.onBackground
             )
         }
