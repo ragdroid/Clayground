@@ -9,6 +9,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.ThumbDown
+import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -42,29 +46,37 @@ class MovieDetailActivity: AppCompatActivity() {
     private val viewModel: MovieDetailAndroidViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.dispatch(MovieDetailEvent.Load)
         setContent {
             val themeColors = MovieTheme.darkColors
 //            val themeColors = if (isSystemInDarkTheme()) MovieTheme.darkColors else MovieTheme.lightColors
             MaterialTheme(themeColors) {
-                MovieDetailScreen()
+                MovieDetailScreen(viewModel)
             }
         }
     }
 
     @Composable
-    fun MovieDetailScreen() {
+    fun MovieDetailScreen(viewModel: MovieDetailAndroidViewModel) {
         val scrollState = rememberScrollState()
         val scaffoldState = rememberScaffoldState()
+        val actioner: (MovieDetailEvent) -> Unit = {
+            viewModel.dispatch(it)
+        }
+        actioner(MovieDetailEvent.Load)
         Scaffold(
             scaffoldState = scaffoldState,
             content = {
                 Column(Modifier.verticalScroll(scrollState)) {
                     MovieDetail()
                     HandleViewEffects(scaffoldState)
-                    RefreshButton()
-                    UpvoteButton()
-                    DownvoteButton()
+                    Row(
+                        Modifier.height(50.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        UpvoteButton(actioner)
+                        DownvoteButton(actioner)
+                        RefreshButton(actioner)
+                    }
                 }
             }
         )
@@ -83,32 +95,46 @@ class MovieDetailActivity: AppCompatActivity() {
     }
 
     @Composable
-    fun RefreshButton() {
+    fun RowScope.RefreshButton(actioner: (MovieDetailEvent) -> Unit) {
         LogCompositions("MovieDetailActivity","recomposed RefreshButton")
-        Button(onClick = {
-            viewModel.dispatch(MovieDetailEvent.Reload)
-        }) {
-            Text(text = "Reload")
+        IconButton(onClick = {
+            actioner(MovieDetailEvent.Reload)
+        }, modifier = Modifier.weight(1.0f)) {
+            Icon(
+                imageVector = Icons.Filled.Refresh,
+                contentDescription = "Reload",
+                modifier = Modifier.height(40.dp)
+            )
         }
     }
 
     @Composable
-    fun UpvoteButton() {
+    fun RowScope.UpvoteButton(actioner: (MovieDetailEvent) -> Unit) {
         LogCompositions("MovieDetailActivity","recomposed UpvoteButton")
-        Button(onClick = {
-            viewModel.dispatch(MovieDetailEvent.Upvote)
-        }) {
-            Text(text = "Upvote")
+        IconButton(onClick = {
+            actioner(MovieDetailEvent.Upvote)
+        },
+            modifier = Modifier.weight(1.0f)) {
+            Icon(
+                imageVector = Icons.Filled.ThumbUp,
+                contentDescription = "Upvote",
+                modifier = Modifier.height(40.dp)
+            )
         }
     }
 
     @Composable
-    fun DownvoteButton() {
+    fun RowScope.DownvoteButton(actioner: (MovieDetailEvent) -> Unit) {
         LogCompositions("MovieDetailActivity","recomposed DownvoteButton")
-        Button(onClick = {
-            viewModel.dispatch(MovieDetailEvent.Downvote)
-        }) {
-            Text(text = "Downvote")
+        IconButton(onClick = {
+            actioner(MovieDetailEvent.Downvote)
+        },
+            modifier = Modifier.weight(1.0f)) {
+            Icon(
+                imageVector = Icons.Filled.ThumbDown,
+                contentDescription = "Downvote",
+                modifier = Modifier.height(40.dp)
+            )
         }
     }
 
@@ -148,7 +174,7 @@ class MovieDetailActivity: AppCompatActivity() {
             contentDescription = stringResource(id = R.string.movie_backdrop_image),
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .height(500.dp)
+                .height(MovieDetailDimen.backdropHeight)
                 .fillMaxWidth()
                 .wrapContentSize(Alignment.TopCenter),
         )
@@ -159,8 +185,10 @@ class MovieDetailActivity: AppCompatActivity() {
         LogCompositions("MovieDetailActivity","recomposed Loader loadingState: $loadingState")
         if (loadingState == LoadingState.LOADING) {
             Box(
-                Modifier
-                    .wrapContentSize(Alignment.Center)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(MovieDetailDimen.backdropHeight),
+                contentAlignment = Alignment.Center
             ) {
                 CircularProgressIndicator()
             }
@@ -231,5 +259,9 @@ class MovieDetailActivity: AppCompatActivity() {
                 color = MaterialTheme.colors.onBackground
             )
         }
+    }
+
+    object MovieDetailDimen {
+        val backdropHeight = 500.dp
     }
 }

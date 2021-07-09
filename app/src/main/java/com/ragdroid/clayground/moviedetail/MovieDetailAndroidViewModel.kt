@@ -1,5 +1,6 @@
 package com.ragdroid.clayground.moviedetail
 
+import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ragdroid.clayground.shared.ui.base.GenericViewModel

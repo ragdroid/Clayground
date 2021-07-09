@@ -23,7 +23,6 @@ open class GenericViewModel<State, Event, SideEffect, ViewEffect>(
     init {
         ensureNeverFrozen()
     }
-    //TODO should this be a normal channel instead?
     private val eventsFlow = Channel<Event>(Channel.UNLIMITED)
     private val sideEffectsFlow = Channel<SideEffect>(Channel.UNLIMITED)
 
@@ -72,7 +71,7 @@ open class GenericViewModel<State, Event, SideEffect, ViewEffect>(
 
     override suspend fun dispatchEvent(event: Event) {
         kermit.d {
-            "inside MovieDetailViewModel: dispatch Event with $event"
+            "inside GenericViewModel: dispatch Event with $event"
         }
 
         eventsFlow.send(event)

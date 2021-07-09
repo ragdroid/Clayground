@@ -57,7 +57,7 @@ class MovieDetailUpdate(): Update<MovieDetailState, MovieDetailEvent, MovieDetai
 }
 
 enum class LoadingState {
-    LOADING, IDLE, JUMPING
+    LOADING, IDLE
 }
 
 sealed class MovieDetailEvent {
