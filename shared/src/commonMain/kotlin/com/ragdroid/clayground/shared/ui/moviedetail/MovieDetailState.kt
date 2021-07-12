@@ -3,9 +3,12 @@ package com.ragdroid.clayground.shared.ui.moviedetail
 import com.ragdroid.clayground.shared.domain.models.MovieDetail
 import com.ragdroid.clayground.shared.domain.models.MovieId
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
+import com.ragdroid.clayground.shared.ui.base.Init
 import com.ragdroid.clayground.shared.ui.base.Next
+import com.ragdroid.clayground.shared.ui.base.SideEffectHandler
+import com.ragdroid.clayground.shared.ui.base.Update
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.channels.ConflatedBroadcastChannel
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -17,8 +20,14 @@ data class MovieDetailState(
     val movieDetails: MovieDetail? = null
 )
 
-class MovieDetailUpdate() {
-    fun update(state: MovieDetailState, event: MovieDetailEvent): Next<MovieDetailState, MovieDetailSideEffect> =
+class MovieDetailInit(): Init<MovieDetailState> {
+    override fun init(): MovieDetailState {
+        return MovieDetailState()
+    }
+}
+
+class MovieDetailUpdate(): Update<MovieDetailState, MovieDetailEvent, MovieDetailSideEffect> {
+    override fun update(state: MovieDetailState, event: MovieDetailEvent): Next<MovieDetailState, MovieDetailSideEffect> =
         when(event) {
             is MovieDetailEvent.Load -> {
                 Next.next(
@@ -71,8 +80,10 @@ sealed class MovieDetailSideEffect {
 @ExperimentalCoroutinesApi
 class MovieDetailSideEffectHandler(
     private val movieDetailRepository: MovieDetailRepository
-) {
-    fun process(sideEffect: MovieDetailSideEffect, _uiEffectsFlow: ConflatedBroadcastChannel<MovieDetailViewEffect>): Flow<MovieDetailEvent> =
+): SideEffectHandler<MovieDetailEvent, MovieDetailSideEffect, MovieDetailViewEffect> {
+    override fun process(
+        sideEffect: MovieDetailSideEffect,
+        effectsChannel: Channel<MovieDetailViewEffect>): Flow<MovieDetailEvent> =
         when (sideEffect) {
             is MovieDetailSideEffect.LoadMovieDetails -> flow<MovieDetailEvent> {
                 val movieDetail = movieDetailRepository.movieDetails(sideEffect.id.id)
@@ -81,7 +92,7 @@ class MovieDetailSideEffectHandler(
                 .onStart { delay(3000) }
                 .catch {
                     it.printStackTrace()
-                    _uiEffectsFlow.send(MovieDetailViewEffect.ShowError(it))
+                    effectsChannel.send(MovieDetailViewEffect.ShowError(it))
                     emit(MovieDetailEvent.LoadFailed(it))
                 }
         }

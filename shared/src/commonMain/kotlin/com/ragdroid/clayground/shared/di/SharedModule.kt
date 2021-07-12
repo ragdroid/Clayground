@@ -5,21 +5,18 @@ import com.ragdroid.clayground.shared.api.ApiToken
 import com.ragdroid.clayground.shared.api.BaseUrl
 import com.ragdroid.clayground.shared.api.MoviesService
 import com.ragdroid.clayground.shared.api.MoviesServiceImpl
-import com.ragdroid.clayground.shared.ui.moviedetail.MovieDetailViewModel
+import com.ragdroid.clayground.shared.ui.base.GenericViewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import com.ragdroid.clayground.shared.BuildKonfig
 import com.ragdroid.clayground.shared.domain.repository.MovieDetailRepository
 import com.ragdroid.clayground.shared.kermitLogger
+import com.ragdroid.clayground.shared.ui.moviedetail.*
 import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import kotlinx.serialization.json.Json
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
-import org.koin.core.component.inject
-import kotlin.native.concurrent.ThreadLocal
 
 class SharedModule {
     val apiModule = module {
